@@ -1,0 +1,72 @@
+#!/bin/bash
+#    fetch metaskirando data and transmit to free.fr
+#    Copyright (C) Nathanael Schaeffer
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+odir=$HOME/perso/meta/base
+logfile=$HOME/nosave/get_data.log
+nice=19
+
+self=`basename $0`
+
+nproc=`ps -eo pid,comm |grep $self |wc -l`
+
+mfadr="http://france.meteofrance.com/js/dwr/call/plaincall/montagneComponent.rechercheStationImagesNivoses.dwr?callCount=1&scriptSessionId=montagneComponent&c0-scriptName=montagneComponent&c0-methodName=rechercheStationImagesNivoses&c0-id=0&batchId=0&c0-param0=string%3A"
+
+echo "nombre de processus $self : $nproc"
+
+if [ "$nproc" -gt "2" ]
+then
+  echo "$self is already running !"
+else
+# self renice
+  var=`ps -eo pid,comm | grep $self`
+  renice $nice $var
+  echo "start $self infinite loop..."
+
+  # this loop fetches web sites every 10 minutes to update the internal database.
+  while true; do
+    wget  "http://www.skitour.fr/topos/dernieres-sorties.php?nbr=100" -O $odir/skitour.web -o $logfile
+    wget  "http://www.volopress.net/volo/spip.php?rubrique2" -O $odir/volo.web -a $logfile
+#    wget  "http://meta.camptocamp.org/outings/query?activity_ids=10&system_id=1&limit=200" -O $odir/c2c.web -a $logfile
+#    wget  "http://www.camptocamp.org/outings" -O $odir/c2c_names.web -a $logfile
+    wget  "http://www.camptocamp.org/outings/list/act/1/layout/light/npp/30" -O $odir/c2c.web -a $logfile
+    wget  "http://www.montagneinfo.net/flux/activites.php?NoIDActivite=11" -O $odir/SNGM.web -a $logfile
+    wget  "http://clubalpinisere.free.fr/crrandoski.php" -O $odir/CAF38.web -a $logfile
+    wget  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sr" -O $odir/gulliver.sr.web -a $logfile
+    wget  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sa" -O $odir/gulliver.sa.web -a $logfile
+    wget  "http://www.bivouak.net/accueil/index.php?id_sport=1" -O $odir/bivouak.web -a $logfile
+
+    wget  "${mfadr}ALPES-NORD" -O $odir/mf_nord.web -a $logfile
+    wget  "${mfadr}ALPES-SUD" -O $odir/mf_sud.web -a $logfile
+    wget  "${mfadr}PYRENEES-EST" -O $odir/mf_pyre.web -a $logfile
+    wget  "${mfadr}PYRENEES-OUEST" -O $odir/mf_pyrw.web -a $logfile
+    cat $odir/mf_nord.web |grep Porte > $odir/nivo_links.web
+    cat $odir/mf_nord.web |grep Bauges >> $odir/nivo_links.web
+    cat $odir/mf_sud.web |grep Mercantour >> $odir/nivo_links.web
+    cat $odir/mf_sud.web |grep Parpaillon >> $odir/nivo_links.web
+    cat $odir/mf_pyre.web |grep Puigmal >> $odir/nivo_links.web
+    cat $odir/mf_pyre.web |grep Hospitalet >> $odir/nivo_links.web
+    cat $odir/mf_pyrw.web |grep Aiguillettes >> $odir/nivo_links.web
+ 
+    rm -f $odir/mf_nord.web $odir/mf_sud.web $odir/mf_pyre.web $odir/mf_pyrw/web
+
+    # next line copy $odir/*.web to the php server (with lftp) for processing and displaying.
+    lftp -f $odir/meta.lftp
+
+    # wait for 600 seconds
+    sleep 600
+  done
+fi
