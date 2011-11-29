@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Metaskirando</ShortName>
+<Description>Metaskirando.free.fr : le moteur de recherche du ski de rando</Description>
+<InputEncoding>iso-8859-1</InputEncoding>
+<Image width="64" height="64" type="image/x-icon">http://metaskirando.free.fr/favicon.ico</Image>
+<Url type="text/html" method="GET" template="http://metaskirando.free.fr/?str={searchTerms}"></Url>
+<moz:SearchForm>http://metaskirando.free.fr"</moz:SearchForm>
+</OpenSearchDescription>

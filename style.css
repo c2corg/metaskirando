@@ -1,0 +1,79 @@
+body {
+	font-size: 80%;
+	color: rgb(0, 0, 0);
+	background-color: rgb(250, 250, 220);
+}
+
+a:link {
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+}
+
+a:visited {
+	color: rgb(0,0,128);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+	font-weight: bold;
+	cursor: hand;
+}
+
+a:active {
+	color: red;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+tr.new {
+	background: #ff99ff;
+}
+
+p.menu {
+	text-align: center;
+	margin-right: 144px;
+	margin-left: 130px;
+/*	font-size: 80%;	*/
+}
+
+span.menu {
+	border: 1px solid ;
+	padding: 4px;
+	background: yellow;
+}
+span.yt {
+	color: #006600;
+	background: yellow;
+}
+
+/*
+div.load {
+	font-size: 70%;
+	font-weight: bold;
+	color: yellow;
+	background: blue;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 2px;
+}
+
+div.noload {
+	font-size: 70%;
+	font-weight: bold;
+	color: rgb(250, 250, 220);
+	background: rgb(250, 250, 220);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 2px;
+}
+*/
+
+table.main {
+	font-size: 90%;
+}
