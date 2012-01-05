@@ -97,7 +97,7 @@ require "sites.inc.php";
 	update_Skirando();
 //	update_NimpCrew();
 	update_Volopress();
-	update_CAFisere();
+//	update_CAFisere();
 
 load_All($sorties);
 

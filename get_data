@@ -44,7 +44,7 @@ else
 #    wget  "http://www.camptocamp.org/outings" -O $odir/c2c_names.web -a $logfile
     wget  "http://www.camptocamp.org/outings/list/act/1/layout/light/npp/30" -O $odir/c2c.web -a $logfile
     wget  "http://www.montagneinfo.net/flux/activites.php?NoIDActivite=11" -O $odir/SNGM.web -a $logfile
-    wget  "http://clubalpinisere.free.fr/crrandoski.php" -O $odir/CAF38.web -a $logfile
+#    wget  "http://clubalpinisere.free.fr/crrandoski.php" -O $odir/CAF38.web -a $logfile
     wget  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sr" -O $odir/gulliver.sr.web -a $logfile
     wget  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sa" -O $odir/gulliver.sa.web -a $logfile
     wget  "http://www.bivouak.net/accueil/index.php?id_sport=1" -O $odir/bivouak.web -a $logfile
