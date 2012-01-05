@@ -30,7 +30,7 @@
 	<a href="http://www.skitour.fr/">Skitour</a>,
 	<a href="http://www.volopress.net/">Volopress</a>.
 <br>
-<i>D'autres sites devraient &ecirc;tre index&eacute;s ? Remarques ? suggestions ? faites-le savoir</i> : <img src="gfx/nat_cour.png">
+<i>D'autres sites devraient &ecirc;tre index&eacute;s ? Remarques ? suggestions ? faites-le savoir</i> : <img src="gfx/c2c_cour.png">
 
 </small>
 </div>
