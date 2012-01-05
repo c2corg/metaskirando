@@ -115,7 +115,10 @@ $nsorties = count($sorties);
 <br /><span style="background: #ff9999;"><big><b>[Nat'n'Co]</b></big> <b>Prochaine rando tractée le samedi 9 Fevrier, au Tabor de la Mure. RDV 8h30 au parking de Villard St-Honore</b> Pour être informé des futurs tractages, inscrivez-vous sur <a href="http://natnco.free.fr">Nat'n'Co</a></span>
 <br /><span style="background: #ff9999;"><big><b>Camptocamp.org est à nouveau correctement indexé + nouvelle <a href="Nivo.php#Par">nivose Parpaillon</a>.</b></big> et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
 -->
+<!--
 <br /><span style="background: #ff9999;"><big><b>nouvelle <a href="Nivo.php#Big">nivose Aiguillettes</a>.</b></big>
+-->
+<br /><span style="background: #ff99ff;"><big><b>Nouvelle adresse pour metaskirando. Le reste est inchangé !</b></big>
 et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
 </p>
 
