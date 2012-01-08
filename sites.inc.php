@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+require_once('./settings.inc.php');
+
 // la date limite des sorties, commune à tous les sites => 1 mois.
 	$dlim = date('Y-m-d',time()-31*24*3600);
 	$today = date('Y-m-d',time());
@@ -122,7 +124,9 @@ $n = count($sorties);
 function load_cache($base,&$sorties)
 {
 	global $dlim;
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 
 	if ($fd = @fopen($txt,'r')) {
 	while( !feof($fd) )
@@ -150,9 +154,11 @@ function load_cache($base,&$sorties)
 function loadclean_cache($base,&$tmp)
 {
 	global $dlim;
+  global $SETTINGS;
+
 	$old = 0;
 	$istart = count($tmp);	// on sauve l'index de depart...
-	$txt = "base/$base.txt";
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	$ftmp = "$txt.tmp";
 	$list_id[] = '0';		// pour supprimer les eventuels doublons...
 
@@ -174,7 +180,7 @@ if ($fd = @fopen($txt,'r'))
 
 		if (($site != $base)&&(!feof($fd))) {	// erreur dans le fichier => reset requis !
 			fclose($fd);
-			@unlink("base/$base.last");
+			@unlink($SETTINGS['odir'] . "/$base.last");
 			return;
 		}
 
@@ -217,7 +223,9 @@ if ($fd = @fopen($txt,'r'))
 function cleanup_cache($base)
 {
 	global $dlim;
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	load_cache($txt,$tmp);
 	$n = count($tmp);
 	$ftmp = "$txt.tmp";
@@ -259,9 +267,11 @@ function load_All( &$sorties )
 /// www.skitour.fr
 function update_Skitour($base = 'skitour')
 {
-	$web = "base/$base.web";
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$web  = $SETTINGS['odir'] . "/$base.web";
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$expire = 10*60;		// en secondes.
 	$ftmp = "$txt.tmp";
 
@@ -302,9 +312,11 @@ function update_Skitour($base = 'skitour')
 /// www.volopress.net
 function update_Volopress($base = 'volo')
 {
-	$web = "base/$base.web";
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$web  = $SETTINGS['odir'] . "/$base.web";
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$expire = 10*60;		// en secondes.
 	$ftmp = "$txt.tmp";
 
@@ -343,9 +355,11 @@ function update_Volopress($base = 'volo')
 /// www.skirando.ch
 function update_Skirando($base = 'c2c')
 {
-	$web = "base/$base.web";
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$web  = $SETTINGS['odir'] . "/$base.web";
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$expire = 10*60;		// en secondes.
 	$ftmp = "$txt.tmp";
 
@@ -388,9 +402,11 @@ function update_Skirando($base = 'c2c')
 /// www.bivouak.net
 function update_Bivouak($base = 'bivouak')
 {
-	$web = "base/$base.web";
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$web  = $SETTINGS['odir'] . "/$base.web";
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$expire = 10*60;		// en secondes.
 
 	if (!file_exists($last)) @unlink($txt);
@@ -421,8 +437,10 @@ function update_Bivouak($base = 'bivouak')
 /// www.ohm-chamonix.com
 function update_OHM($base = 'OHM')
 {
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$expire = 2*3600;		// 2 heures
 	$ftmp = "$txt.tmp";
 
@@ -463,7 +481,9 @@ function update_OHM($base = 'OHM')
 // nimp.crew.free.fr
 function update_NimpCrew($base = 'nimpcrew')
 {
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	$expire = 30*60;	// en secondes.
 	$cur_month = date('m');	$cur_year = date('Y');
 	
@@ -508,7 +528,9 @@ function update_NimpCrew($base = 'nimpcrew')
 function update_BLMS($base = 'blms')
 {
 	global $dlim;
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	$expire = 60*60;	// en secondes.
 	
 	if (@filemtime($web) > @filemtime($txt))
@@ -575,9 +597,11 @@ function get_mois($mois)
 // CAF Isere
 function update_CAFisere($base = 'CAF38')
 {
-	$web = "base/$base.web";
 	global $dlim;
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$web = $SETTINGS['odir'] . "/$base.web";
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	$expire = 60*60;	// en secondes.
 	
 	if (@filemtime($web) > @filemtime($txt))
@@ -619,8 +643,10 @@ function update_CAFisere($base = 'CAF38')
 
 function update_SNGM($base = 'SNGM')
 {
-	$web = "base/$base.web";
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$web = $SETTINGS['odir'] . "/$base.web";
+	$txt = $SETTINGS['odir'] . "/$base.txt";
 	$expire = 60*60;	// en secondes.
 	$ftmp = "$txt.tmp";
 	
@@ -647,9 +673,11 @@ function update_SNGM($base = 'SNGM')
 
 function update_Gulliver($base = 'gulliver')
 {
-	$web = "base/$base.sa.web";
-	$web2 = "base/$base.sr.web";
-	$txt = "base/$base.txt";
+  global $SETTINGS;
+
+	$web  = $SETTINGS['odir'] . "/$base.sa.web";
+	$web2 = $SETTINGS['odir'] . "/$base.sr.web";
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
 	$expire = 60*60;	// en secondes.
 	$buffer = '';
 	$ftmp = "$txt.tmp";
@@ -1034,8 +1062,10 @@ function parse_OHM(&$textall,$last_id)
 
 function reset_Skitour($nread = 500, $base = 'skitour' )
 {
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$ftmp = "$txt.tmp";
 
 	echo "<p>Indexing skitour.fr ...";
@@ -1073,8 +1103,10 @@ function reset_Skitour($nread = 500, $base = 'skitour' )
 
 function reset_Skirando($nread = 120, $base = 'c2c' )
 {
-	$txt = "base/$base.txt";
-	$last = "base/$base.last";
+  global $SETTINGS;
+
+	$txt  = $SETTINGS['odir'] . "/$base.txt";
+	$last = $SETTINGS['odir'] . "/$base.last";
 	$ftmp = "$txt.tmp";
 
 	echo "<p>Indexing skirando.ch ...";
@@ -1082,7 +1114,7 @@ function reset_Skirando($nread = 120, $base = 'c2c' )
 	{
 		fclose($fd);
 //		$textall = file_get_contents('http://meta.camptocamp.org/outings/query?activity_ids=10&system_id=1&limit=500');
-		$textall = file_get_contents("base/$base.web");
+		$textall = file_get_contents($SETTINGS['odir'] . "/$base.web");
 		echo $textall;
 		$new_id = 0;
 		$new_id = parse_Skirando($textall,$new_id);

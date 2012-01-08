@@ -13,7 +13,11 @@
 
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/ ?>
+*/
+
+require_once('./settings.inc.php');
+
+ ?>
 <html>
 <head>
 <title>Meta-Skirando : Nivoses et Météo dans les Alpes.</title>
@@ -85,7 +89,7 @@ Les stations automatiques de Météo France sont disséminées dans les montagnes et
 
 <?php
 // Parsing mf data.
-	$links = file('base/nivo_links.web');
+	$links = file($SETTINGS['odir'] . '/nivo_links.web');
 	ereg('(niv7j_[^"]+)',$links[0],$regs); $img_porte[0] = $regs[1];
 	ereg('(niv_[^"]+)',$links[0],$regs); $img_porte[1] = $regs[1];
 	ereg('(niv7j_[^"]+)',$links[1],$regs); $img_bauges[0] = $regs[1];

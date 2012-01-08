@@ -15,6 +15,9 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+  require_once('./settings.inc.php');
+
 	$myregs = $_COOKIE['myregs'];
 	$raide = $_COOKIE['raide'];
 	extract($_GET);		// php 5
@@ -22,11 +25,11 @@
 	$time = time();
 	unset( $last_sktr, $last_volo, $last_bivk, $last_skrd );
 // les dernieres sorties sont stockees dans 'last' pour 2 jours.
-	$last_sktr = trim(@file_get_contents('base/skitour.last'));
-	$last_volo = trim(@file_get_contents('base/volo.last'));
-	$last_bivk = trim(@file_get_contents('base/bivouak.last'));
-	$last_skrd = trim(@file_get_contents('base/c2c.last'));
-	$last_ohm = trim(@file_get_contents('base/OHM.last'));
+	$last_sktr = trim(@file_get_contents($SETTINGS['odir'] . '/skitour.last'));
+	$last_volo = trim(@file_get_contents($SETTINGS['odir'] . '/volo.last'));
+	$last_bivk = trim(@file_get_contents($SETTINGS['odir'] . '/bivouak.last'));
+	$last_skrd = trim(@file_get_contents($SETTINGS['odir'] . '/c2c.last'));
+	$last_ohm  = trim(@file_get_contents($SETTINGS['odir'] . '/OHM.last'));
 // on efface le cookie 'last' pour le mettre a jour.
 	setcookie('last','',$time-1000);
 	setcookie('last',"sktr=$last_sktr&volo=$last_volo&bivk=$last_bivk&skrd=$last_skrd&ohm=$last_ohm",$time+48*3600);
