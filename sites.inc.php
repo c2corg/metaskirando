@@ -352,7 +352,7 @@ function update_Volopress($base = 'volo')
 	return TRUE;
 }
 
-/// www.skirando.ch
+/// www.camptocamp.org
 function update_Skirando($base = 'c2c')
 {
   global $SETTINGS;
@@ -1109,7 +1109,7 @@ function reset_Skirando($nread = 120, $base = 'c2c' )
 	$last = $SETTINGS['odir'] . "/$base.last";
 	$ftmp = "$txt.tmp";
 
-	echo "<p>Indexing skirando.ch ...";
+	echo "<p>Indexing camptocamp.org ...";
 	if ( $fd = @fopen($ftmp,'x') )		// pas d'autre tentative ?
 	{
 		fclose($fd);

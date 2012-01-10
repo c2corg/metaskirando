@@ -112,7 +112,7 @@ if (isset($_GET['go']))
 <div style="margin-left: 5%;">
 <select size="4" name="site[]" multiple="multiple">
 <option value="all">* tous * </option>
-<option value="skrd">skirando.ch (c2c) </option>
+<option value="skrd">camptocamp.org </option>
 <option value="sktr">skitour.fr </option>
 <option value="bivk">bivouak.net </option>
 <option value="volo">volopress.fr </option>
