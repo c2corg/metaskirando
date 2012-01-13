@@ -25,7 +25,7 @@ mfadr="http://france.meteofrance.com/js/dwr/call/plaincall/montagneComponent.rec
 download () {
   TMP=$(mktemp)
   sleep $((RANDOM % $t))
-  $curl "$2" > $TMP && mv $TMP $odir/"$1".web
+  $curl $3 "$2" > $TMP && mv $TMP $odir/"$1".web
 
   if [ $? == 0 ]; then
     echo "fetched $2"
@@ -36,9 +36,8 @@ download () {
 
 download skitour      "http://www.skitour.fr/topos/dernieres-sorties.php?nbr=100" &
 download volo         "http://www.volopress.net/volo/spip.php?rubrique2" &
-download c2c          "http://www.camptocamp.org/outings/list/act/1/layout/light/npp/30" &
+download c2c          "http://localhost/outings/list/act/1/layout/light/npp/30" "--header 'Host: www.camptocamp.org'" &
 download SNGM         "http://www.montagneinfo.net/flux/activites.php?NoIDActivite=11" &
-#download CAF38        "http://clubalpinisere.free.fr/crrandoski.php" &
 download gulliver.sr  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sr" &
 download gulliver.sa  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sa" &
 download bivouak      "http://www.bivouak.net/accueil/index.php?id_sport=1" &
