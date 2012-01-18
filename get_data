@@ -38,8 +38,8 @@ download skitour      "http://www.skitour.fr/topos/dernieres-sorties.php?nbr=100
 download volo         "http://www.volopress.net/volo/spip.php?rubrique2" &
 download c2c          "http://localhost/outings/list/act/1/layout/light/npp/30" "--header 'Host: www.camptocamp.org'" &
 download SNGM         "http://www.montagneinfo.net/flux/activites.php?NoIDActivite=11" &
-download gulliver.sr  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sr" &
-download gulliver.sa  "http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sa" &
+download gulliver.sr  "http://www.gulliver.it/sci-ripido/" &
+download gulliver.sa  "http://www.gulliver.it/scialpinismo/" &
 download bivouak      "http://www.bivouak.net/accueil/index.php?id_sport=1" &
 
 ($curl "${mfadr}ALPES-NORD"   && \

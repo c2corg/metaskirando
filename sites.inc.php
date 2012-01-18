@@ -1,6 +1,7 @@
 <?php
 /*
     Copyright (C) Nathanael Schaeffer
+    Copyright (C) Camptocamp Association
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -723,7 +724,7 @@ function update_Gulliver($base = 'gulliver')
 
 
 //////////////////////////
-// $textall = @file_get_contents('http://www.gulliver.it/index.php?modulo=itinerari&template=itinerario_cerca_tipo&tipo=sr');
+// $textall = @file_get_contents('http://www.gulliver.it/scialpinismo/');
 // renvoie dans $textall un buffer pret a etre ecrit dans le fichier cache.
 function parse_Gulliver(&$textall)
 {
@@ -738,11 +739,12 @@ function parse_Gulliver(&$textall)
 	for ($i = 1;$i<$n; $i++)
 	{
 		$items = explode('</td>',$entries[$i]);
-		$nom = trim(strip_tags($items[0]));
+                $nom = explode('</a>', $items[0]);
+                $nom = trim(strip_tags($nom[0]));
 		$cot = trim(strip_tags($items[1]));
 		$date = trim(strip_tags($items[2]));
-// recupere l'ID :
-		eregi('id_gita=([0-9]+)',$items[0],$regs);	$id = $regs[1];
+// recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
+		eregi('/itinerario/([0-9]+)/',$items[0],$regs);	$id = $regs[1];
 // recupere la region :
 		unset($regs);
 		if ( preg_match_all('/\([^\)]+\)/',$items[0],$regs) > 0) {
@@ -751,7 +753,7 @@ function parse_Gulliver(&$textall)
 // interprete la date :
 		ereg ("([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})", $date, $regs);
 		$date = sprintf("%04d-%02d-%02d", $regs[3], $regs[2], $regs[1]);
-		$textall .= "gulliver $id\n$date $cot\n$nom\nhttp://www.gulliver.it/index.php?modulo=itinerari&template=dettaglio&id_gita=$id\n$reg\n\n";
+		$textall .= "gulliver $id\n$date $cot\n$nom\nhttp://www.gulliver.it/itinerario/$id/\n$reg\n\n";
 	}
 }
 
