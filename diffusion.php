@@ -117,9 +117,6 @@ if (isset($_GET['go']))
 <option value="bivk">bivouak.net </option>
 <option value="volo">volopress.fr </option>
 <option value="sngm">montagneinfo.net (SNGM) </option>
-<option value="ohm">OHM-Chamonix </option>
-<option value="nimp">Nimp'Crew </option>
-<option value="blms">BLMS </option>
 </select>
 </div><br>
 
@@ -189,7 +186,7 @@ plusieurs r&eacute;gions sont &agrave; s&eacute;parer par</i> |
 
 <hr>
 
-<h2><a name="box">Les boites de recerche :</a></h2>
+<h2><a name="box">Les boites de recherche :</a></h2>
 <table cellpadding="5" width="100%">
 <tbody>
 <tr>
@@ -205,7 +202,7 @@ r&eacute;gions qui vous plaisent !<br>
 <tr bgcolor="#ccccff">
 <td>
 <div style="text-align: center;"> </div>
-<form method="get" action="http://metaskirando.free.fr/index.php">
+<form method="get" action="http://metaskirando.camptocamp.org/index.php">
 <div style="text-align: center;"><i>Kick
 Zeurch</i> :<br>
 &nbsp;<input title="rechercher une sortie avec M&eacute;ta-skirando" size="20"
@@ -215,7 +212,7 @@ name="str" type="text"> <br>
 </td>
 <td style="text-align: center;">
 <form method="get" name="msr-regs"
-action="http://metaskirando.free.fr/index.php"><b>Massif
+action="http://metaskirando.camptocamp.org/index.php"><b>Massif
 :<br>
 &nbsp;</b>
 <select name="zon"
@@ -234,10 +231,10 @@ onchange="document.forms['msr-regs'].submit()">
 </table>
 <p>Le code <i>Kick Zeurch</i> &agrave; copier dans votre page web :
 </p>
-<pre>&lt;form method="get" action="http://metaskirando.free.fr/index.php"&gt;<br>&lt;i&gt;Kick Zeurch&lt;/i&gt; :&lt;br&gt;<br>&lt;input title="rechercher une sortie avec M&eacute;ta-skirando" size="20" name="str" type="text"&gt;<br>&lt;br&gt;&lt;input name="kz" value="Quoi de neuf ?" type="submit"&gt;<br>&lt;/form&gt;</pre>
+<pre>&lt;form method="get" action="http://metaskirando.camptocamp.org/index.php"&gt;<br>&lt;i&gt;Kick Zeurch&lt;/i&gt; :&lt;br&gt;<br>&lt;input title="rechercher une sortie avec M&eacute;ta-skirando" size="20" name="str" type="text"&gt;<br>&lt;br&gt;&lt;input name="kz" value="Quoi de neuf ?" type="submit"&gt;<br>&lt;/form&gt;</pre>
 <p>Le code <i>R&eacute;gions</i> &agrave; copier dans votre page web,
 et &agrave; personaliser avec vos r&eacute;gions :</p>
-<pre>&lt;form method="get" name="msr-regs" action="http://metaskirando.free.fr/index.php"&gt;<br>&lt;b&gt;Massif&lt;/b&gt; :&lt;br&gt;<br>&lt;select name="zon" onchange="document.forms['msr-regs'].submit()"&gt;<br> &lt;option value=""&gt;&lt;/option&gt;<br> &lt;option value="Aravis|Bornes"&gt;Aravis-Bornes&lt;/option&gt;<br> &lt;option value="Belledonne"&gt;Belledonne&lt;/option&gt;<br> &lt;option value="Beaufort"&gt;Beaufortain&lt;/option&gt;<br> &lt;option value="voluy"&gt;D&eacute;voluy&lt;/option&gt;<br> &lt;option value="Pyr"&gt;Pyr&eacute;n&eacute;es&lt;/option&gt;<br>&lt;/select&gt;&lt;/form&gt;<br></pre>
+<pre>&lt;form method="get" name="msr-regs" action="http://metaskirando.camptocamp.org/index.php"&gt;<br>&lt;b&gt;Massif&lt;/b&gt; :&lt;br&gt;<br>&lt;select name="zon" onchange="document.forms['msr-regs'].submit()"&gt;<br> &lt;option value=""&gt;&lt;/option&gt;<br> &lt;option value="Aravis|Bornes"&gt;Aravis-Bornes&lt;/option&gt;<br> &lt;option value="Belledonne"&gt;Belledonne&lt;/option&gt;<br> &lt;option value="Beaufort"&gt;Beaufortain&lt;/option&gt;<br> &lt;option value="voluy"&gt;D&eacute;voluy&lt;/option&gt;<br> &lt;option value="Pyr"&gt;Pyr&eacute;n&eacute;es&lt;/option&gt;<br>&lt;/select&gt;&lt;/form&gt;<br></pre>
 <br>
 
 <?php include 'bottom.inc'; ?>
