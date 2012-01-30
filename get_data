@@ -25,7 +25,7 @@ mfadr="http://france.meteofrance.com/js/dwr/call/plaincall/montagneComponent.rec
 
 download () {
   TMP=$(mktemp)
-  sleep 10s
+  sleep $((RANDOM % $t))
 
   if test -z "$3"; then
     $curl -H "User-Agent: $ua" $2 > $TMP && mv $TMP $odir/"$1".web

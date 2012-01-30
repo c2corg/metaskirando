@@ -110,7 +110,7 @@ $nsorties = count($sorties);
 
 ?>
 
-<p style="text-align: center;">Les <b><?php echo $nsorties; ?></b> derni&egrave;res sorties des principaux sites web de ski de randonn&eacute;s accessibles d'un seul coup d'oeil !<br>
+<p style="text-align: center;">Les <b><?php echo $nsorties; ?></b> derni&egrave;res sorties des principaux sites web de ski de randonn&eacute;e accessibles d'un seul coup d'oeil !<br>
 <!--
 <br /><span style="background: #ff99ff;"><big><b>Bug corrigé : </b></big>les <a href="prefs.php">filtres personnalisés</a> fonctionnent à nouveau</span>
 -->
