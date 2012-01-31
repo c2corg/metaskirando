@@ -35,3 +35,8 @@
 </small>
 </div>
 </div>
+<script type="text/javascript">
+var _gaq = [['_setAccount', 'UA-2814179-4'],['_setDomainName', 'none'],['_trackPageview'],['_trackPageLoadTime']];
+_gaq.push(function() {pageTracker = _gat._getTracker('UA-2814179-4')});(function(d, t) { var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+g.async = 1; g.src = '//www.google-analytics.com/ga.js'; s.parentNode.insertBefore(g, s); }(document, 'script'));
+</script>
