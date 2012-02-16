@@ -5,5 +5,5 @@
 <InputEncoding>iso-8859-1</InputEncoding>
 <Image width="64" height="64" type="image/x-icon">http://metaskirando.camptocamp.org/favicon.ico</Image>
 <Url type="text/html" method="GET" template="http://metaskirando.camptocamp.org/?str={searchTerms}"></Url>
-<moz:SearchForm>http://metaskirando.camptocamp.org"</moz:SearchForm>
+<moz:SearchForm>http://metaskirando.camptocamp.org</moz:SearchForm>
 </OpenSearchDescription>
