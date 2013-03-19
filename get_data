@@ -37,6 +37,7 @@ download () {
     echo "fetched $2"
   else
     echo "failed fetching $2"
+    rm -f $TMP
   fi
 }
 
