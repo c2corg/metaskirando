@@ -22,7 +22,7 @@
 	$tsave = $time + 30*24*3600;
 	$tdel = $time - 1000;
 
-// Rajoute une région.
+// Rajoute une rÃ©gion.
 	if (!empty($_POST['new_name']))
 	{
 		if (!empty($_POST['filtA']))
@@ -34,7 +34,7 @@
 		}
 	}
 
-// Met à jour les filtres
+// Met Ã  jour les filtres
 	if (isset($_POST['region']))
 	{
 		foreach ( $_POST['region'] as $name => $filter )
@@ -75,29 +75,29 @@
 ?>
 <html>
 <head>
-<title>Meta-Skirando : Mes préférences</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Meta-Skirando : Mes prÃ©fÃ©rences</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <?php include 'menu.inc'; ?>
 
-<h2>Mes Régions :</h2>
+<h2>Mes RÃ©gions :</h2>
 
-<p><i>Pour définir une région, il faut lui donner un nom et spécifier un filtre. Le filtre
-est une expression régulière, qui n'a pas besoin d'être un mot complet. Pour rechercher plusieurs région, il suffit de les séparer par "</i>|<i>".
-Le point "</i>.<i>" désigne n'importe quel caractère et est recommandé à la place de caractères accentués.<br>
+<p><i>Pour dÃ©finir une rÃ©gion, il faut lui donner un nom et spÃ©cifier un filtre. Le filtre
+est une expression rÃ©guliÃ¨re, qui n'a pas besoin d'Ãªtre un mot complet. Pour rechercher plusieurs rÃ©gion, il suffit de les sÃ©parer par "</i>|<i>".
+Le point "</i>.<i>" dÃ©signe n'importe quel caractÃ¨re et est recommandÃ© Ã  la place de caractÃ¨res accentuÃ©s.<br>
 Exemples:</i><br>
-<i>* On peut définir la région "</i>Dauphiné<i>" avec pour filtre "</i>Belledonne|D.voluy|Vercors|Chartreuse|Taillefer|.crins<i>".</i><br>
-<i>* Pour le Beaufortain, étant donné les multiples orthographes, le filtre "</i>Beaufort<i>" fait l'affaire.</i><br>
-<i>Les régions sont enregistrées dans des cookies pour être disponible lors de vos prochaines visites. On peut tester les filtres avant de les enregistrer à l'aide de la recherche "Kick Zeurch".</i>
+<i>* On peut dÃ©finir la rÃ©gion "</i>DauphinÃ©<i>" avec pour filtre "</i>Belledonne|D.voluy|Vercors|Chartreuse|Taillefer|.crins<i>".</i><br>
+<i>* Pour le Beaufortain, Ã©tant donnÃ© les multiples orthographes, le filtre "</i>Beaufort<i>" fait l'affaire.</i><br>
+<i>Les rÃ©gions sont enregistrÃ©es dans des cookies pour Ãªtre disponible lors de vos prochaines visites. On peut tester les filtres avant de les enregistrer Ã  l'aide de la recherche "Kick Zeurch".</i>
 </p>
 
 <form method='post'>
 <center>
 <table style='padding:5px'>
-<tr class='new'><td><b>Nom de la région</b></td><td><b>Filtre correspondant</b></td><td></td></tr>
+<tr class='new'><td><b>Nom de la rÃ©gion</b></td><td><b>Filtre correspondant</b></td><td></td></tr>
 
 <?php
 	if (isset($region))	{
@@ -110,7 +110,7 @@ Exemples:</i><br>
 
 <tr class="new"><td valign='top'><input typr=text size=20 name='new_name'></td>
 	<td><input typr=text size=40 name='new_filter'><br>
-	ou crérer à partir de région existantes :<br>
+	ou crÃ©rer Ã  partir de rÃ©gion existantes :<br>
 <select size="8" name="filtA[]" multiple="multiple">
 <?php	
 	if (isset($_COOKIE['region']))
@@ -131,23 +131,23 @@ Exemples:</i><br>
 </table>
 </center>
 
-<h2>Préférences :</h2>
+<h2>PrÃ©fÃ©rences :</h2>
 
 <center>
 <table>
 <tr><td>
 	<input type=checkbox name="raide" <?php if (isset($raide)) echo 'checked'; ?>>
 </td><td>
-	Afficher uniquement la pente raide par défaut (<i>à partir de la difficulté 4.1 ou D-, et volopress.fr</i>).
+	Afficher uniquement la pente raide par dÃ©faut (<i>Ã  partir de la difficultÃ© 4.1 ou D-, et volopress.fr</i>).
 </td></tr>
 <tr><td>
 	<input type=checkbox name="myregs" <?php if (isset($myregs)) echo 'checked'; ?>>
 </td><td>
-	Afficher les dernières sorties uniquement dans mes régions <i>et ne soyez plus parasité par les sorties de Nouvelle Zélande ou du Pakistan ;-)</i>
+	Afficher les derniÃ¨res sorties uniquement dans mes rÃ©gions <i>et ne soyez plus parasitÃ© par les sorties de Nouvelle ZÃ©lande ou du Pakistan ;-)</i>
 </td></tr>
 </table>
 <br>
-<INPUT TYPE=submit NAME="save" VALUE="Oui, c'est ça !">
+<INPUT TYPE=submit NAME="save" VALUE="Oui, c'est Ã§a !">
 </center>
 </form>
 

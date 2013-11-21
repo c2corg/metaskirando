@@ -17,9 +17,9 @@
 <html>
 <head>
 <title>Meta-Skirando : diffusion</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="description" content="Le moteur de recherche du Ski de Rando. Les conditions de neige pour le ski de randonnée en France et ailleurs !" />
-<meta name="keywords" content="ski de rando, ski alpinisme, ski extrême, pente raide, alpes, pyrénées, neige, météo, skitour, skirando, blms, nimp crew, volopress, ohm chamonix, sngm, bivouak" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Le moteur de recherche du Ski de Rando. Les conditions de neige pour le ski de randonnÃ©e en France et ailleurs !" />
+<meta name="keywords" content="ski de rando, ski alpinisme, ski extrÃªme, pente raide, alpes, pyrÃ©nÃ©es, neige, mÃ©tÃ©o, skitour, skirando, blms, nimp crew, volopress, ohm chamonix, sngm, bivouak" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 <?php
 
@@ -72,9 +72,9 @@ include 'menu.inc';
 
 <h1>Diffusez Meta-Skirando !</h1>
 <p>
-Pour cela, plusieurs possibilités pour votre site :
+Pour cela, plusieurs possibilitÃ©s pour votre site :
 <ul>
-	<li>Mettre un lien vers Méta-Skirando (facile !)</li>
+	<li>Mettre un lien vers MÃ©ta-Skirando (facile !)</li>
 	<li>Mettre en place une <a href="#box">boite de recherche</a> (pratique !)</li>
 	<li>Afficher des sorties via RSS (enrichissez le contenu de votre site !)</li>
 </ul>
@@ -82,12 +82,12 @@ Pour cela, plusieurs possibilités pour votre site :
 
 <h2>Le flux RSS du Ski de
 Rando :</h2>
-<p>Affichez les sorties de ski de rando qui vous intéressent sur votre site (à l'aide d'un <a href="http://www.globalsyndication.com/rss-parser">petit script PHP</a>), mais aussi sur l'acceuil personalisé de google ! <br>
+<p>Affichez les sorties de ski de rando qui vous intÃ©ressent sur votre site (Ã  l'aide d'un <a href="http://www.globalsyndication.com/rss-parser">petit script PHP</a>), mais aussi sur l'acceuil personalisÃ© de google ! <br>
 Exemples :
 <ul>
-<li>Il est possible de récupérer les sorties dont vous êtes l'auteur sur le site où vous contribuez.</li>
-<li>Si vous êtes fan de LTA chez volopress et de David Zijp chez skitour, récupérez juste leurs sorties ! (en sélectionnant les sites "volopress" et "skitour" et dans le champs auteurs "LTA|David Zijp"</li>
-<li>Vous avez un site web régional : affichez toutes les dernieres sorties sur cette région !</li>
+<li>Il est possible de rÃ©cupÃ©rer les sorties dont vous Ãªtes l'auteur sur le site oÃ¹ vous contribuez.</li>
+<li>Si vous Ãªtes fan de LTA chez volopress et de David Zijp chez skitour, rÃ©cupÃ©rez juste leurs sorties ! (en sÃ©lectionnant les sites "volopress" et "skitour" et dans le champs auteurs "LTA|David Zijp"</li>
+<li>Vous avez un site web rÃ©gional : affichez toutes les dernieres sorties sur cette rÃ©gion !</li>
 </ul>
 </p>
 
@@ -95,7 +95,7 @@ Exemples :
 
 if (isset($_GET['go']))
 {
-	echo "\n\n<p><b>Voici le fil RSS correspondant à cette requête :</b> <a href=\"$lien\">$lien</a></p>\n\n";
+	echo "\n\n<p><b>Voici le fil RSS correspondant Ã  cette requÃªte :</b> <a href=\"$lien\">$lien</a></p>\n\n";
 }
 
 	load_All($sorties);

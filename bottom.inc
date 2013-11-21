@@ -21,7 +21,7 @@
 <div style="text-align: center;"><small><br>
 <i>Sites index&eacute;s :</i> <a href="http://www.bivouak.net/">bivouak.net</a>, 
 	<!-- <a href="http://blms.free.fr/">BLMS</a>, -->
-	<!-- <a href="http://www.clubalpin-grenoble.com/crrandoski.php">CAF de l'Isère</a>, -->
+	<!-- <a href="http://www.clubalpin-grenoble.com/crrandoski.php">CAF de l'IsÃ¨re</a>, -->
 	<a href="http://www.camptocamp.org/">camptocamp.org (c2c)</a>,
 	<a href="http://www.gulliver.it/">gulliver.it</a>, 
 	<a href="http://www.ohm-chamonix.com/">ohm-chamonix.com</a>, 

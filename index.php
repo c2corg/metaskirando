@@ -64,9 +64,9 @@
 <html>
 <head>
 <title>Meta-Skirando</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="description" content="Le moteur de recherche du Ski de Rando. Les conditions de neige pour le ski de randonnée en France et ailleurs !" />
-<meta name="keywords" content="ski de rando, ski alpinisme, ski extrême, pente raide, alpes, pyrénées, neige, météo, skitour, skirando, blms, nimp crew, volopress, ohm chamonix, sngm, bivouak" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Le moteur de recherche du Ski de Rando. Les conditions de neige pour le ski de randonnÃ©e en France et ailleurs !" />
+<meta name="keywords" content="ski de rando, ski alpinisme, ski extrÃªme, pente raide, alpes, pyrÃ©nÃ©es, neige, mÃ©tÃ©o, skitour, skirando, blms, nimp crew, volopress, ohm chamonix, sngm, bivouak" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="Les dernieres sorties de ski de rando" href="ski_rss.php" />
 <link rel="search" type="application/opensearchdescription+xml" title="rechercher avec metaskirando" href="metaskirando.xml">
@@ -112,17 +112,17 @@ $nsorties = count($sorties);
 
 <p style="text-align: center;">Les <b><?php echo $nsorties; ?></b> derni&egrave;res sorties des principaux sites web de ski de randonn&eacute;e accessibles d'un seul coup d'oeil !<br>
 <!--
-<br /><span style="background: #ff99ff;"><big><b>Bug corrigé : </b></big>les <a href="prefs.php">filtres personnalisés</a> fonctionnent à nouveau</span>
+<br /><span style="background: #ff99ff;"><big><b>Bug corrigÃ© : </b></big>les <a href="prefs.php">filtres personnalisÃ©s</a> fonctionnent Ã  nouveau</span>
 -->
 <!--
-<br /><span style="background: #ff9999;"><big><b>[Nat'n'Co]</b></big> <b>Prochaine rando tractée le samedi 9 Fevrier, au Tabor de la Mure. RDV 8h30 au parking de Villard St-Honore</b> Pour être informé des futurs tractages, inscrivez-vous sur <a href="http://natnco.free.fr">Nat'n'Co</a></span>
-<br /><span style="background: #ff9999;"><big><b>Camptocamp.org est à nouveau correctement indexé + nouvelle <a href="Nivo.php#Par">nivose Parpaillon</a>.</b></big> et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
+<br /><span style="background: #ff9999;"><big><b>[Nat'n'Co]</b></big> <b>Prochaine rando tractÃ©e le samedi 9 Fevrier, au Tabor de la Mure. RDV 8h30 au parking de Villard St-Honore</b> Pour Ãªtre informÃ© des futurs tractages, inscrivez-vous sur <a href="http://natnco.free.fr">Nat'n'Co</a></span>
+<br /><span style="background: #ff9999;"><big><b>Camptocamp.org est Ã  nouveau correctement indexÃ© + nouvelle <a href="Nivo.php#Par">nivose Parpaillon</a>.</b></big> et aussi un <b>plugin recherche pour firefox</b> proposÃ© par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
 -->
 <!--
 <br /><span style="background: #ff9999;"><big><b>nouvelle <a href="Nivo.php#Big">nivose Aiguillettes</a>.</b></big>
 -->
-<br /><span style="background: #ff99ff;"><big><b>Nouvelle adresse pour metaskirando. Le reste est inchangé !</b></big>
-et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
+<br /><span style="background: #ff99ff;"><big><b>Nouvelle adresse pour metaskirando. Le reste est inchangÃ© !</b></big>
+et aussi un <b>plugin recherche pour firefox</b> proposÃ© par un de nos lecteurs.<br> Pour l'installer cliquer sur l'icone de la barre de recherche, et ajouter "metaskirando" !</span>
 </p>
 
 
@@ -130,14 +130,14 @@ et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.
 <FORM method='get' name='search'>
 <table align='center'><tr bgcolor='#ccccff'>
 <td style="text-align:center; padding:5px 20px">
-	<i><b>K</b>ick <b>Z</b>eurch</i> : <INPUT title="recherche sur tous les champs (massif, itinéraire, auteur, date ...)" TYPE=text SIZE=20 NAME=str>
+	<i><b>K</b>ick <b>Z</b>eurch</i> : <INPUT title="recherche sur tous les champs (massif, itinÃ©raire, auteur, date ...)" TYPE=text SIZE=20 NAME=str>
 	<INPUT TYPE=submit NAME="kz" VALUE="Quoi de neuf ?">
 </td><td style="text-align:center; padding: 5px 20px;">
 <input title="Seulement les pentes raides (a partir du niveau 4.1 ou D-)" type=checkbox name="raide" <?php if (isset($raide)) echo 'checked'; ?>>&nbsp;Pente&nbsp;raide.
 <?php
 	if (isset($_COOKIE['region']))
 	{	?>
-<br><input title="Seulement les sorties de mes régions." type=checkbox name="myregs" <?php if (isset($myregs)) echo 'checked'; ?>>&nbsp;Dans&nbsp;mes&nbsp;régions.
+<br><input title="Seulement les sorties de mes rÃ©gions." type=checkbox name="myregs" <?php if (isset($myregs)) echo 'checked'; ?>>&nbsp;Dans&nbsp;mes&nbsp;rÃ©gions.
 <?php 
 	}	?>
 </td><td style="text-align:center; padding:5px 20px">
@@ -165,7 +165,7 @@ et aussi un <b>plugin recherche pour firefox</b> proposé par un de nos lecteurs.
 <input TYPE=submit NAME="find" VALUE="Baaaaase !">
 -->
 <br>
-	<a href="prefs.php">Définir mes régions</a>
+	<a href="prefs.php">DÃ©finir mes rÃ©gions</a>
 </td></tr>
 </table>
 </FORM></div>
@@ -306,7 +306,7 @@ if ($kz == 0)
 /*
 	if ($nf > 30)
 	{
-		echo "<p>$nf nouvelles sorties, dont 30 affichées.</p>\n";
+		echo "<p>$nf nouvelles sorties, dont 30 affichÃ©es.</p>\n";
 		$found = array_slice($found,0,30);
 	}
 	else
@@ -363,7 +363,7 @@ if (isset($found))
 		if ($date == $prevdate) {
 			$dtxt = '';
 		} else {
-			if ($i >= 100) break;	// trop de sorties ? on arête là !
+			if ($i >= 100) break;	// trop de sorties ? on arÃªte lÃ  !
 			$dtxt = $date;
 			$prevdate = $date;
 		}

@@ -20,29 +20,29 @@ require_once('./settings.inc.php');
  ?>
 <html>
 <head>
-<title>Meta-Skirando : Nivoses et Météo dans les Alpes.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Meta-Skirando : Nivoses et MÃ©tÃ©o dans les Alpes.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="style.css" rel="stylesheet" type="text/css">
-<meta name="description" content="Le moteur de recherche du Ski de Rando. Les nivoses de météo france et les bulletins d'avalanche. Prévisions météo montagne dans les Alpes" />
-<meta name="keywords" content="ski de rando, ski alpinisme, ski extrême, pente raide, alpes, pyrénées, neige, météo" />
+<meta name="description" content="Le moteur de recherche du Ski de Rando. Les nivoses de mÃ©tÃ©o france et les bulletins d'avalanche. PrÃ©visions mÃ©tÃ©o montagne dans les Alpes" />
+<meta name="keywords" content="ski de rando, ski alpinisme, ski extrÃªme, pente raide, alpes, pyrÃ©nÃ©es, neige, mÃ©tÃ©o" />
 </head>
 <body>
 
 <?php include 'menu.inc'; ?>
 
-<h1>Nivologie et précautions</h1>
+<h1>Nivologie et prÃ©cautions</h1>
 
 <p>
-<b>En ski de rando, on s'expose à des risques.</b> Une bonne expérience de la montagne, de la neige et un équipement spécial (Arva/Pelle/Sonde) sont nécessaires pour évoluer avec un minimum de sécurité.
-Consultez les conseils pratiques et le petit traité de nivologie de l'<a href="http://www.anena.org/">Anena</a>.<br>
-Le site camptocamp.org a regroupé beaucoup d'infos sur la neige et les avalanches, en particulier des <a href="http://www.camptocamp.org/articles/107439/fr/neige-et-avalanches-les-ressources-du-net">témoignages d'accidents</a>.<br>
-N'hésitez pas à sortir avec des organismes spécialisés (comme le CAF), qui vous formeront à être autonomes.<br>
+<b>En ski de rando, on s'expose Ã  des risques.</b> Une bonne expÃ©rience de la montagne, de la neige et un Ã©quipement spÃ©cial (Arva/Pelle/Sonde) sont nÃ©cessaires pour Ã©voluer avec un minimum de sÃ©curitÃ©.
+Consultez les conseils pratiques et le petit traitÃ© de nivologie de l'<a href="http://www.anena.org/">Anena</a>.<br>
+Le site camptocamp.org a regroupÃ© beaucoup d'infos sur la neige et les avalanches, en particulier des <a href="http://www.camptocamp.org/articles/107439/fr/neige-et-avalanches-les-ressources-du-net">tÃ©moignages d'accidents</a>.<br>
+N'hÃ©sitez pas Ã  sortir avec des organismes spÃ©cialisÃ©s (comme le CAF), qui vous formeront Ã  Ãªtre autonomes.<br>
 </p>
 
-<h1><a name='meteo'></a>Prévisions et Observations</h1>
+<h1><a name='meteo'></a>PrÃ©visions et Observations</h1>
 
 <ul>
-<li>Bulletins d'avalanches de Météo France
+<li>Bulletins d'avalanches de MÃ©tÃ©o France
 <?php
 	function bra_link_list($deps) {
 		foreach ($deps as $dep) {
@@ -54,36 +54,36 @@ N'hésitez pas à sortir avec des organismes spécialisés (comme le CAF), qui vous 
 	}
 ?>
 <ul><li>Alpes : <?php bra_link_list(array('04','05','06','38','73','74')); ?></li>
-<li>Pyrénées : <?php bra_link_list(array('09','31','64','65','66','Andorre')); ?></li>
+<li>PyrÃ©nÃ©es : <?php bra_link_list(array('09','31','64','65','66','Andorre')); ?></li>
 <li>Corse : <?php bra_link_list(array('2A','2B')); ?></li>
 </ul>
 <li>Bulletins d'avalanches <a href="http://www.slf.ch/laworg/tab.html">ailleurs en europe</a></li>
-<li>Prévisions météo : <a href="http://geo.hmg.inpg.fr/caplain/meteo/mto38.shtml">Caplain</a>, <a href="http://www.meteo-alpes.fr/">Alpes</a>, <a href="http://meteo.chamonix.com/MetPre.php3">Chamonix</a>,
+<li>PrÃ©visions mÃ©tÃ©o : <a href="http://geo.hmg.inpg.fr/caplain/meteo/mto38.shtml">Caplain</a>, <a href="http://www.meteo-alpes.fr/">Alpes</a>, <a href="http://meteo.chamonix.com/MetPre.php3">Chamonix</a>,
 	<a href="http://www.inln.cnrs.fr/meteo.php3">INLN</a>
- et <a href="http://www.meteofrance.com/FR/index.jsp">MeteoCrash.fr</a>. D'autres liens météo sur <a href="http://www.meteo-chamonix.org/">meteo-chamonix.org</a>.
+ et <a href="http://www.meteofrance.com/FR/index.jsp">MeteoCrash.fr</a>. D'autres liens mÃ©tÃ©o sur <a href="http://www.meteo-chamonix.org/">meteo-chamonix.org</a>.
 </li>
-<li>Observations Météo en temps réel : <a href="http://www.meteociel.fr/">Météociel</a> et <a href="http://www.infoclimat.fr/accueil/">infoclimat</a>.
+<li>Observations MÃ©tÃ©o en temps rÃ©el : <a href="http://www.meteociel.fr/">MÃ©tÃ©ociel</a> et <a href="http://www.infoclimat.fr/accueil/">infoclimat</a>.
 </li>
 <!--
-<li>Précipitations sur les reliefs (brut de Météo France, 1mm d'eau correspond à 1cm de neige environ) :
+<li>PrÃ©cipitations sur les reliefs (brut de MÃ©tÃ©o France, 1mm d'eau correspond Ã  1cm de neige environ) :
 <ul>
 <li>Alpes : <a href="http://www.meteo.fr/temps/scm/images/alp/ws06p00xxalp.gif">J-1</a>, <a href="http://www.meteo.fr/temps/scm/images/alp/ws06p24xxalp.gif">J</a>, <a href="http://www.meteo.fr/temps/scm/images/alp/ws06p48xxalp.gif">J+1</a></li>
-<li>Pyrénées : <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p00xxpyr.gif">J-1</a>, <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p24xxpyr.gif">J</a>, <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p48xxpyr.gif">J+1</a></li>
+<li>PyrÃ©nÃ©es : <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p00xxpyr.gif">J-1</a>, <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p24xxpyr.gif">J</a>, <a href="http://www.meteo.fr/temps/scm/images/pyr/ws06p48xxpyr.gif">J+1</a></li>
 </ul>
 </li>
-<li>Enneigement dans <a href="http://www.meteo.fr/temps/scm/wcalpa.htm">les Alpes</a> et dans <a href="http://www.meteo.fr/temps/scm/wcpyra.htm">les Pyrénées</a>, comparés aux moyennes (brut de Météo France)
+<li>Enneigement dans <a href="http://www.meteo.fr/temps/scm/wcalpa.htm">les Alpes</a> et dans <a href="http://www.meteo.fr/temps/scm/wcpyra.htm">les PyrÃ©nÃ©es</a>, comparÃ©s aux moyennes (brut de MÃ©tÃ©o France)
 </li>
 -->
 </ul>
 
 <h1><a name='nivo'></a>Stations automatiques</h1>
 
-Les stations automatiques de Météo France sont disséminées dans les montagnes et donnent de précieuses informations sur les chutes de neige, les températures et le vent, en différents endroits :
+Les stations automatiques de MÃ©tÃ©o France sont dissÃ©minÃ©es dans les montagnes et donnent de prÃ©cieuses informations sur les chutes de neige, les tempÃ©ratures et le vent, en diffÃ©rents endroits :
 <ul>
 <li><b>Autour de Grenoble</b> : <a href="#Bel">Belledonne</a>, <a href="#Ecr">Ecrins</a>, <a href="#Ver">Vercors</a>, <a href="#Cha">Chartreuse</a></li>
 <li><b>Alpes du Nord</b> : <a href="#Aig">Aiguilles Rouges</a>, <a href="#Bau">Bauges</a>, <a href="#Bea">Beaufortain</a>, <a href="#Van">Vanoise</a>, <a href="#Mau">Haute-Maurienne</a>, <a href="#Tar">Haute-Tarentaise</a>, <a href="#Tha">Thabor</a></li>
 <li><b>Alpes du Sud</b> : <a href="#Ech">Champsaur</a>, <a href="#Que">Queyras</a>, <a href="#Par">Parpaillon</a>, <a href="#Uba">Ubaye</a>, <a href="#Mer">Mercantour</a></li>
-<li><b>Pyrénées</b> : <a href="#PyE">Orientales</a>, <a href="#PyC">Centrales</a>, <a href="#Big">Haute Bigorre</a>, <a href="#PyW">Occidentales</a></li>
+<li><b>PyrÃ©nÃ©es</b> : <a href="#PyE">Orientales</a>, <a href="#PyC">Centrales</a>, <a href="#Big">Haute Bigorre</a>, <a href="#PyW">Occidentales</a></li>
 <li><b>Corse</b> : <a href="#Cor">Cinto-Rotondo</a></li>
 </ul>
 
@@ -111,10 +111,10 @@ Les stations automatiques de Météo France sont disséminées dans les montagnes et
 <br><b>Belledonne</b>, sur le Plat du Pin, au-dessus du Rivier d'Allemont, en montant vers le Pic de la Belle Etoile. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/DUPIN.gif">6 mois</a> ]
 </p>
 <p><a name='Ecr' href='http://www.meteo.fr/temps/france/nivose/pics/ECRINS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/ECRINS.gif' width='533'></a><a href='http://www.meteo.fr/temps/france/nivose/pics/MEIJES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MEIJES.gif' width='533'></a>
-<br><b>Ecrins</b>, sur la morraine du glacier de Bonnepierre, non-loin du dôme des Ecrins. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ECRIN.gif">6 mois</a> ] + dans les vallons de la Meije, au-dessus de la Grave (?) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/MEIJE.gif">6 mois</a> ]
+<br><b>Ecrins</b>, sur la morraine du glacier de Bonnepierre, non-loin du dÃ´me des Ecrins. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ECRIN.gif">6 mois</a> ] + dans les vallons de la Meije, au-dessus de la Grave (?) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/MEIJE.gif">6 mois</a> ]
 </p>
 <p><a name='Ver' href='http://www.meteo.fr/temps/france/nivose/pics/LEGUAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/LEGUAS.gif' width='533'></a><br>
-<b>Vercors</b>, commune de Le Gua (à côté du couloir des Sultanes) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LEGUA.gif">6 mois</a> ]
+<b>Vercors</b>, commune de Le Gua (Ã  cÃ´tÃ© du couloir des Sultanes) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LEGUA.gif">6 mois</a> ]
 </p>
 <p><a name='Cha' href='http://www.meteo.fr/temps/france/nivose/pics/STHILS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/STHILS.gif' width='533'></a><a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_porte[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_porte[0] ?>" width='533'></a>
 <br>
@@ -145,7 +145,7 @@ Les stations automatiques de Météo France sont disséminées dans les montagnes et
 </p>
 
 <p><a name='Ech' href='http://www.meteo.fr/temps/france/nivose/pics/ORCIES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/ORCIES.gif' width='533'></a><br>
-<b>Champsaur</b>, Orcières. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ORCIE.gif">6 mois</a> ]
+<b>Champsaur</b>, OrciÃ¨res. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ORCIE.gif">6 mois</a> ]
 </p>
 <p><a name='Que' href='http://www.meteo.fr/temps/france/nivose/pics/AGNELS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/AGNELS.gif' width='533'></a><br>
 <b>Queyras</b>, col Agnel. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/AGNEL.gif">6 mois</a> ]
@@ -163,30 +163,30 @@ Les stations automatiques de Météo France sont disséminées dans les montagnes et
 <p><a name='PyE' href='http://www.meteo.fr/temps/france/nivose/pics/CANIGS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/CANIGS.gif' width='533'></a>
 <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[0] ?>" width='533'></a>
 <br>
-<b>Pyrénées Orientales</b>, Canigou [ <a href="http://www.meteo.fr/temps/france/nivose/pics/CANIG.gif">6 mois</a> ] + Puigmal [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[1] ?>">6 mois</a> ].
+<b>PyrÃ©nÃ©es Orientales</b>, Canigou [ <a href="http://www.meteo.fr/temps/france/nivose/pics/CANIG.gif">6 mois</a> ] + Puigmal [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[1] ?>">6 mois</a> ].
 </p>
 
 <p>
 <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[0] ?>"><img border='1' src='http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[0] ?>' width='533'></a>
 <a href='http://www.meteo.fr/temps/france/nivose/pics/PAULAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/PAULAS.gif' width='533'></a>
 <br>
-<b>Pyrénées Orientales</b>, Hospitalet [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[1] ?>">6 mois</a> ] + Couserans (Port d'Aula) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/PAULA.gif">6 mois</a> ].
+<b>PyrÃ©nÃ©es Orientales</b>, Hospitalet [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[1] ?>">6 mois</a> ] + Couserans (Port d'Aula) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/PAULA.gif">6 mois</a> ].
 </p>
 
 
 <p><a name='PyC' href='http://www.meteo.fr/temps/france/nivose/pics/MAUPAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MAUPAS.gif' width='533'></a><br>
-<b>Pyrénées Centrales</b>, Luchonnais (Maupas)[ <a href="http://www.meteo.fr/temps/france/nivose/pics/MAUPA.gif">6 mois</a> ].
+<b>PyrÃ©nÃ©es Centrales</b>, Luchonnais (Maupas)[ <a href="http://www.meteo.fr/temps/france/nivose/pics/MAUPA.gif">6 mois</a> ].
 </p>
 
 <p>
 <a name='Big' href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[0] ?>"><img border='1' src='http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[0] ?>' width='533'></a>
 <a href='http://www.meteo.fr/temps/france/nivose/pics/LARDIS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/LARDIS.gif' width='533'></a>
 <br>
-<b>Haute Bigorre (Pyrénées)</b>, Tunnel de Bielsa (Aiguillettes) [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[1] ?>">6 mois</a> ] + Lac d'Ardiden [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LARDI.gif">6 mois</a> ].
+<b>Haute Bigorre (PyrÃ©nÃ©es)</b>, Tunnel de Bielsa (Aiguillettes) [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[1] ?>">6 mois</a> ] + Lac d'Ardiden [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LARDI.gif">6 mois</a> ].
 </p>
 
 <p><a name='PyW' href='http://www.meteo.fr/temps/france/nivose/pics/SOUMCS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/SOUMCS.gif' width='533'></a><br>
-<b>Pyrénées Occidentales</b>, Aspe-Ossau (Soum Couy). [ <a href="http://www.meteo.fr/temps/france/nivose/pics/SOUMC.gif">6 mois</a> ]
+<b>PyrÃ©nÃ©es Occidentales</b>, Aspe-Ossau (Soum Couy). [ <a href="http://www.meteo.fr/temps/france/nivose/pics/SOUMC.gif">6 mois</a> ]
 </p>
 
 <p><a name='Cor' href='http://www.meteo.fr/temps/france/nivose/pics/SPONDS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/SPONDS.gif' width='533'></a><a href='http://www.meteo.fr/temps/france/nivose/pics/MANICS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MANICS.gif' width='533'></a><br>

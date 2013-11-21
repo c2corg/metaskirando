@@ -19,13 +19,13 @@
 
 require_once('./settings.inc.php');
 
-// la date limite des sorties, commune à tous les sites => 1 mois.
+// la date limite des sorties, commune Ã  tous les sites => 1 mois.
 	$dlim = date('Y-m-d',time()-31*24*3600);
 	$today = date('Y-m-d',time());
 	ignore_user_abort(TRUE);
 
 //////////////
-// les sorties sont enregistrées par :
+// les sorties sont enregistrÃ©es par :
 // * date * site * region * iti * lien * participants * cot
 //////////////
 
@@ -38,8 +38,8 @@ $reg[] = array( 'nom' => '+ Savoies', 'key' => 'Aravis|Bornes|Bauges|Chablais|Fa
 	$reg[] = array( 'nom' => '&nbsp; Mont-Blanc', 'nbr' => 0, 'key' => 'Blanc|Bianco' );
 $reg[] = array( 'nom' => '+ Maurienne et Tarentaise', 'nbr' => 0, 'key' => 'Beaufort|lauz|Vanoise|Maurienne|Charbonnel|Cerces|Ambin|Thabor|Tarentaise|Alpes Gr' );
 	$reg[] = array( 'nom' => '&nbsp; Beaufortain', 'nbr' => 0, 'key' => 'Beaufort' );
-	$reg[] = array( 'nom' => '&nbsp; Vanoise-Lauzière', 'nbr' => 0, 'key' => 'Vanoise|lauz' );
-	$reg[] = array( 'nom' => '&nbsp; Charbonnel - Grées', 'nbr' => 0, 'key' => 'Charbonnel|Tarentaise|Maurienne|Alpes Gr' );
+	$reg[] = array( 'nom' => '&nbsp; Vanoise-LauziÃ¨re', 'nbr' => 0, 'key' => 'Vanoise|lauz' );
+	$reg[] = array( 'nom' => '&nbsp; Charbonnel - GrÃ©es', 'nbr' => 0, 'key' => 'Charbonnel|Tarentaise|Maurienne|Alpes Gr' );
 	$reg[] = array( 'nom' => '&nbsp; Cerces - Thabor - Ambin', 'nbr' => 0, 'key' => 'Cerces|Thabor|Ambin|Maurienne' );
 $reg[] = array( 'nom' => '+ Autour de Grenoble', 'key' => 'Belledonne|Chartreuse|Vercors|Rousses|Taillefer|Mat.+sine|Beaumont', 'nbr' => 0 );
 	$reg[] = array( 'nom' => '&nbsp; Belledonne', 'nbr' => 0, 'key' => 'Belledonne' );
@@ -49,23 +49,23 @@ $reg[] = array( 'nom' => '+ Autour de Grenoble', 'key' => 'Belledonne|Chartreuse
 	$reg[] = array( 'nom' => '&nbsp; Vercors', 'nbr' => 0, 'key' => 'Vercors' );
 $reg[] = array( 'nom' => '+ Alpes du Sud', 'key' => 'Dign|Queyras|Parpaillon|Ubaye|Brian|Maritime|Mercantour|Baron|voluy|crins|valg|oisans|combeyn|champsaur|grasse|provence|du.Sud', 'nbr' => 0);
 	$reg[] = array( 'nom' => '&nbsp; Alpes Maritimes', 'nbr' => 0, 'key' => 'Maritime|Mercantour' );
-	$reg[] = array( 'nom' => '&nbsp; Dévoluy', 'nbr' => 0, 'key' => 'voluy' );
+	$reg[] = array( 'nom' => '&nbsp; DÃ©voluy', 'nbr' => 0, 'key' => 'voluy' );
 	$reg[] = array( 'nom' => '&nbsp; Ecrins', 'nbr' => 0, 'key' => 'crins|champsaur|valg|combeyn|oisans' );
-	$reg[] = array( 'nom' => '&nbsp; Préalpes de Provence', 'key' => 'Dign|Baron|grasse|prov', 'nbr' => 0);
+	$reg[] = array( 'nom' => '&nbsp; PrÃ©alpes de Provence', 'key' => 'Dign|Baron|grasse|prov', 'nbr' => 0);
 	$reg[] = array( 'nom' => '&nbsp; Queyras - Parpaillon - Ubaye', 'nbr' => 0, 'key' => 'Queyras|Parpaillon|Ubaye|Brian' );
 $reg[] = array( 'nom' => 'Corse', 'nbr' => 0, 'key' => 'Corse|Corsica' );
 $reg[] = array( 'nom' => 'Jura', 'nbr' => 0, 'key' => 'Jura' );
 $reg[] = array( 'nom' => 'Massif Central', 'nbr' => 0, 'key' => 'Massif Central' );
-//$reg[] = array( 'nom' => 'Pyrénées', 'nbr' => 0, 'key' => 'Pyr|Aig.etortes|Andorr.|Ari.ge|Aure|Capcir|Card.s|Cerdagne|Corbi.res|Conflent|Gavarnie|Maladeta|N.ouvielle|Ordesa|Posets' );
-$reg[] = array( 'nom' => 'Pyrénées', 'nbr' => 0, 'key' => 'Pyr|Pirine|Aig.etortes|Andorr|Ari.ge|Aure|Basque|B.arn|Bigorre|Cadi|Canigou|Cantabri|Capcir|Card.s|Catalo|Cerdagne|Conflent|Corbi.res|Couserans|Encantats|Euskadi|Gavarnie|Garrotxa|Gredos|Luchon|Maladeta|Mont.Perdu|Monte.Perdido|Navarr|N.ouvielle|de.Europa|Posets|Puigmal|Vasco' );
+//$reg[] = array( 'nom' => 'PyrÃ©nÃ©es', 'nbr' => 0, 'key' => 'Pyr|Aig.etortes|Andorr.|Ari.ge|Aure|Capcir|Card.s|Cerdagne|Corbi.res|Conflent|Gavarnie|Maladeta|N.ouvielle|Ordesa|Posets' );
+$reg[] = array( 'nom' => 'PyrÃ©nÃ©es', 'nbr' => 0, 'key' => 'Pyr|Pirine|Aig.etortes|Andorr|Ari.ge|Aure|Basque|B.arn|Bigorre|Cadi|Canigou|Cantabri|Capcir|Card.s|Catalo|Cerdagne|Conflent|Corbi.res|Couserans|Encantats|Euskadi|Gavarnie|Garrotxa|Gredos|Luchon|Maladeta|Mont.Perdu|Monte.Perdido|Navarr|N.ouvielle|de.Europa|Posets|Puigmal|Vasco' );
 $reg[] = array( 'nom' => 'Vosges', 'nbr' => 0, 'key' => 'Vosges' );
 $reg[] = array( 'nom' => '+ Suisse', 'nbr' => 0, 'key' => 'Bern|Vaudois|Urner|Glarner|Appenzell|ndner|Graub' );
 	$reg[] = array( 'nom' => '&nbsp; Alpes Bernoises/Fribourgeoises', 'nbr' => 0, 'key' => 'Bern|Fribourg' );
 	$reg[] = array( 'nom' => '&nbsp; Alpes Vaudoises', 'nbr' => 0, 'key' => 'Vaudois' );
 	$reg[] = array( 'nom' => '&nbsp; Apenzeller', 'nbr' => 0, 'key' => 'Appenzell' );
-	$reg[] = array( 'nom' => '&nbsp; Bündner Oberland', 'nbr' => 0, 'key' => 'ndner' );
+	$reg[] = array( 'nom' => '&nbsp; BÃ¼ndner Oberland', 'nbr' => 0, 'key' => 'ndner' );
 	$reg[] = array( 'nom' => '&nbsp; Urner-Glarner Alpen', 'nbr' => 0, 'key' => 'Urner|Glarner' );
-	$reg[] = array( 'nom' => '&nbsp; Graubünden', 'nbr' => 0, 'key' => 'Graub' );
+	$reg[] = array( 'nom' => '&nbsp; GraubÃ¼nden', 'nbr' => 0, 'key' => 'Graub' );
 $reg[] = array( 'nom' => 'Valais', 'nbr' => 0, 'key' => 'Valais|Pennin' );
 $reg[] = array( 'nom' => '+ Italie', 'nbr' => 0, 'key' => 'Italie|Paradis|Tici|Orobie|Adamello|Dolomiti|Giulie|Ortles|Cozi|Disgrazia' );
 	$reg[] = array( 'nom' => '&nbsp; Adamello', 'nbr' => 0, 'key' => 'Adamello' );
@@ -81,7 +81,7 @@ $r = count($reg);
 $r2 = 0;
 $n = count($sorties);
 
-// un premier scan pour obtenir les régions.
+// un premier scan pour obtenir les rÃ©gions.
 	for ($i=0;$i<$n;$i++)
 	{
 		$reg_name = $sorties[$i]['reg'];
@@ -231,7 +231,7 @@ function cleanup_cache($base)
 	$n = count($tmp);
 	$ftmp = "$txt.tmp";
 	
-	if ( $fd = @fopen($ftmp,'x+') )		// la base n'est pas déjç en train d'etre nettoyée ???
+	if ( $fd = @fopen($ftmp,'x+') )		// la base n'est pas dÃ©jÃ§ en train d'etre nettoyÃ©e ???
 	{
 		for ($i=0; $i<$n; $i++)
 		{
@@ -743,7 +743,7 @@ function parse_Gulliver(&$textall)
                 $nom = trim(strip_tags($nom[0]));
 		$cot = trim(strip_tags($items[1]));
 		$date = trim(strip_tags($items[2]));
-// recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
+// recupere l'ID de l'itinÃ©raire (la sortie n'est pas directement disponible...)
 		eregi('/itinerario/([0-9]+)/',$items[0],$regs);	$id = $regs[1];
 // recupere la region :
 		unset($regs);
@@ -781,7 +781,7 @@ function parse_SNGM(&$textall)
 }
 
 // http://meta.camptocamp.org/outings/query?activity_ids=10&system_id=1&limit=200
-/*   <item><title>Tête Pelouse : Voie Normale</title>
+/*   <item><title>TÃªte Pelouse : Voie Normale</title>
    		<pubDate>2007-11-26T12:00:00Z</pubDate>
    		<author>Camptocamp.org (Camptocamp.org)</author>
    		<description>HautGiffre-AigRouges , 2475m , skirando , PD-/S2 , NW , fr</description>
@@ -875,7 +875,7 @@ function volo_cot($url,&$parts)
 //    et en return value : $new_id (l'id le plus recent).
 function parse_Volopress(&$textall,$last_id)
 {
-// on garde que la partie intéressante.
+// on garde que la partie intÃ©ressante.
 	$textall = substr($textall,strpos($textall,'row_first'));
 	$textall = substr($textall,0,strpos($textall,'</table>'));
 	$volo = explode('</tr>',$textall);
@@ -1143,7 +1143,7 @@ function kick_zeurch($keys, $str_data)
 
 function sans_accent($chaine)
 {
-   $accent  ="ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõöøùúûıışÿ";
+   $accent  ="Ã€ÃÃ‚ÃƒÃ„Ã…Ã†Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃÃŸÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã¦Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã¸Ã¹ÃºÃ»Ã½Ã½Ã¾Ã¿";
    $noaccent="aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyyby";
    return strtr(trim($chaine),$accent,$noaccent);
 } 

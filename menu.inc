@@ -15,12 +15,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ ?>
 <p class="menu"><span class="menu">
-<a href="index.php" title="Rechercher les dernières sorties de ski de rando !">Accueil</a> ||
-<a href="Nivo.php" title="Nivoses et Météo">Nivo & Météo</a> ||
+<a href="index.php" title="Rechercher les derniÃ¨res sorties de ski de rando !">Accueil</a> ||
+<a href="Nivo.php" title="Nivoses et MÃ©tÃ©o">Nivo & MÃ©tÃ©o</a> ||
 <a href="http://www.skitour.fr/webcams/" title="Webcams de stations de skis (skitour.fr)">Webcams Montagne</a> ||
 <a href="diffusion.php" title="Diffuser l'info sur votre site !">Diffusion</a> ||
-<!-- <a href="archeovolo.php" title="Rechercher une course chez Volopress (depuis 2001)">ArchéoVologie</a> || -->
-<a href="prefs.php" title="D&eacute;finir mes pr&eacute;f&eacute;rences et mes régions">Pr&eacute;f&eacute;rences</a>
+<!-- <a href="archeovolo.php" title="Rechercher une course chez Volopress (depuis 2001)">ArchÃ©oVologie</a> || -->
+<a href="prefs.php" title="D&eacute;finir mes pr&eacute;f&eacute;rences et mes rÃ©gions">Pr&eacute;f&eacute;rences</a>
 </span>
 </p>
 

@@ -20,7 +20,7 @@
 ?>
 
 <channel>
-<title>Les dernières sorties de ski de rando</title>
+<title>Les derniÃ¨res sorties de ski de rando</title>
 <link>http://metaskirando.free.fr/</link>
 <language>fr-FR</language>
 
@@ -99,7 +99,7 @@ if (empty($sorties))
 
 if (empty($found))
 {
-	echo "<item><title>Pas de sorties récentes pour ce filtre.</title></item>\n";
+	echo "<item><title>Pas de sorties rÃ©centes pour ce filtre.</title></item>\n";
 }
 else
 {

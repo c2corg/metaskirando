@@ -2,7 +2,7 @@
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
 <ShortName>Metaskirando</ShortName>
 <Description>metaskirando.camptocamp.org : le moteur de recherche du ski de rando</Description>
-<InputEncoding>iso-8859-1</InputEncoding>
+<InputEncoding>utf-8</InputEncoding>
 <Image width="64" height="64" type="image/x-icon">http://metaskirando.camptocamp.org/favicon.ico</Image>
 <Url type="text/html" method="GET" template="http://metaskirando.camptocamp.org/?str={searchTerms}"></Url>
 <moz:SearchForm>http://metaskirando.camptocamp.org</moz:SearchForm>
