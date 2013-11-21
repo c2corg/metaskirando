@@ -31,9 +31,17 @@ download () {
   sleep $((RANDOM % $t))
 
   if test -z "$3"; then
-    $curl -H "User-Agent: $ua" $2 > $TMP && mv $TMP $odir/"$1".web
+    $curl -H "User-Agent: $ua" $2 > $TMP
   else
-    $curl -H "User-Agent: $ua" -H "Host: $3" $2 > $TMP && mv $TMP $odir/"$1".web
+    $curl -H "User-Agent: $ua" -H "Host: $3" $2 > $TMP
+  fi
+
+  CHARSET="$(file -bi $TMP|awk -F "=" '{print $2}')"
+  if [ "$CHARSET" != utf-8 ]; then
+    echo "change encoding from $CHARSET to utf-8"
+    iconv -f "$CHARSET" -t utf8 $TMP -o $odir/"$1".web && rm $TMP
+  else
+    mv $TMP $odir/"$1".web
   fi
 
   if [ $? == 0 ]; then
