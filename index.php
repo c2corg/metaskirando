@@ -92,7 +92,7 @@ require "sites.inc.php";
 
 
 //	update_OHM();
-	update_SNGM();
+//	update_SNGM();
 //	update_BLMS();
 	update_Bivouak();
 	update_Skitour();
