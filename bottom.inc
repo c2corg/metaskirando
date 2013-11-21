@@ -24,9 +24,9 @@
 	<!-- <a href="http://www.clubalpin-grenoble.com/crrandoski.php">CAF de l'Isère</a>, -->
 	<a href="http://www.camptocamp.org/">camptocamp.org (c2c)</a>,
 	<a href="http://www.gulliver.it/">gulliver.it</a>, 
-	<a href="http://www.ohm-chamonix.com/">ohm-chamonix.com</a>, 
+	<!-- <a href="http://www.ohm-chamonix.com/">ohm-chamonix.com</a>, -->
 	<!-- <a href="http://www.montagneinfo.net/">montagneinfo.net (SNGM)</a>, -->
-	<a href="http://nimp.crew.free.fr/">Nimp'Crew</a>,
+	<!-- <a href="http://nimp.crew.free.fr/">Nimp'Crew</a>, -->
 	<a href="http://www.skitour.fr/">Skitour</a>,
 	<a href="http://www.volopress.net/">Volopress</a>.
 <br>
