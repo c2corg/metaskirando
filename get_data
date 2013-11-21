@@ -22,7 +22,8 @@ odir="/var/www/metaskirando.camptocamp.org/private/data"
 t=180
 
 mfadrs="http://www.meteofrance.com/mf3-rpc-portlet/rest/relevemontagne/releve/"
-mfadre="/type/imgnivosesai"
+mfadresai="/type/imgnivosesai"
+mfadre7j="/type/imgnivose7j"
 nivadrs="http:\/\/www.meteofrance.com\/integration\/sim-portail"
 
 download () {
@@ -51,9 +52,11 @@ download gulliver.sr  "http://www.gulliver.it/sci-ripido/" &
 download gulliver.sa  "http://www.gulliver.it/scialpinismo/" &
 download bivouak      "http://www.bivouak.net/accueil/index.php?id_sport=1" &
 
-nivose_file="$odir/nivo_links.web"
-rm -f $nivose_file
+TMP=$(mktemp)
 for i in BONNE PORTE ECRIN AIGRG BELLE GRPAR ROCHI MEIJE AIGLE CHEVR ALLAN STHIL LEGUA PARPA MILLE RESTE AGNEL ORCIE MANIC SPOND CANIG PAULA MAUPA PUIGN HOSPI LARDI MAUPA SOUMC AIGTE; do
-  $curl "${mfadrs}ZONE_${i}${mfadre}" | sed "s/^\"/ZONE_${i}:\"${nivadrs}/" >> $nivose_file
-  echo "" >> $nivose_file
+  $curl "${mfadrs}ZONE_${i}${mfadresai}" | sed "s/^\"/ZONE_${i}_SAI:\"${nivadrs}/" >> $TMP
+  echo "" >> $TMP
+  $curl "${mfadrs}ZONE_${i}${mfadre7j}" | sed "s/^\"/ZONE_${i}:\"${nivadrs}/" >> $TMP
+  echo "" >> $TMP
 done
+mv $TMP "$odir/nivo_links.web"
