@@ -90,107 +90,99 @@ Les stations automatiques de Météo France sont disséminées dans les montagne
 <?php
 // Parsing mf data.
 	$links = file($SETTINGS['odir'] . '/nivo_links.web');
-	ereg('(niv7j_[^"]+)',$links[0],$regs); $img_porte[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[0],$regs); $img_porte[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[1],$regs); $img_bauges[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[1],$regs); $img_bauges[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[2],$regs); $img_merc[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[2],$regs); $img_merc[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[3],$regs); $img_parp[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[3],$regs); $img_parp[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[4],$regs); $img_puig[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[4],$regs); $img_puig[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[5],$regs); $img_hosp[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[5],$regs); $img_hosp[1] = $regs[1];
-	ereg('(niv7j_[^"]+)',$links[6],$regs); $img_aig[0] = $regs[1];
-	ereg('(niv_[^"]+)',$links[6],$regs); $img_aig[1] = $regs[1];
+  foreach ($links as $line) {
+    if (preg_match('/(ZONE_[A-Z]+):"(.*)"/', $line, $matches)) {
+      ${$matches[1]} = $matches[2];
+    }
+  }
+
 ?>
 
 <center>
-<p><a name='Bel' href='http://www.meteo.fr/temps/france/nivose/pics/DUPINS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/DUPINS.gif' width='533'></a>
-<br><b>Belledonne</b>, sur le Plat du Pin, au-dessus du Rivier d'Allemont, en montant vers le Pic de la Belle Etoile. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/DUPIN.gif">6 mois</a> ]
+<p><a name='Bel' href='<?php echo $ZONE_AIGLE ?>'><img border='1' src='<?php echo $ZONE_AIGLE ?>' width='533'></a>
+<br><b>Belledonne</b>, sur le Plat du Pin, au-dessus du Rivier d'Allemont, en montant vers le Pic de la Belle Etoile.
 </p>
-<p><a name='Ecr' href='http://www.meteo.fr/temps/france/nivose/pics/ECRINS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/ECRINS.gif' width='533'></a><a href='http://www.meteo.fr/temps/france/nivose/pics/MEIJES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MEIJES.gif' width='533'></a>
-<br><b>Ecrins</b>, sur la morraine du glacier de Bonnepierre, non-loin du dôme des Ecrins. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ECRIN.gif">6 mois</a> ] + dans les vallons de la Meije, au-dessus de la Grave (?) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/MEIJE.gif">6 mois</a> ]
+<p><a name='Ecr' href='<?php echo $ZONE_ECRIN ?>'><img border='1' src='<?php echo $ZONE_ECRIN ?>' width='533'></a><a href='<?php echo $ZONE_MEIJE ?>'><img border='1' src='<?php echo $ZONE_MEIJE ?>' width='533'></a>
+<br><b>Ecrins</b>, sur la morraine du glacier de Bonnepierre, non-loin du dôme des Ecrins. + dans les vallons de la Meije, au-dessus de la Grave (?)
 </p>
-<p><a name='Ver' href='http://www.meteo.fr/temps/france/nivose/pics/LEGUAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/LEGUAS.gif' width='533'></a><br>
-<b>Vercors</b>, commune de Le Gua (à côté du couloir des Sultanes) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LEGUA.gif">6 mois</a> ]
+<p><a name='Ver' href='<?php echo $ZONE_LEGUA ?>'><img border='1' src='<?php echo $ZONE_LEGUA ?>' width='533'></a><br>
+<b>Vercors</b>, commune de Le Gua (à côté du couloir des Sultanes)
 </p>
-<p><a name='Cha' href='http://www.meteo.fr/temps/france/nivose/pics/STHILS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/STHILS.gif' width='533'></a><a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_porte[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_porte[0] ?>" width='533'></a>
+<p><a name='Cha' href='<?php echo $ZONE_STHIL ?>'><img border='1' src='<?php echo $ZONE_ECRIN ?>' width='533'></a><a href="<?php echo $ZONE_PORTE ?>"><img border='1' src="<?php echo $ZONE_PORTE ?>" width='533'></a>
 <br>
-<b>Chartreuse</b>, commune de St-Hilaire du Touvet (1700m) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/STHIL.gif">6 mois</a> ] + Col de Porte - Centre d'Etude de la Neige (1325m) [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_porte[1] ?>">6 mois</a> ]
+<b>Chartreuse</b>, commune de St-Hilaire du Touvet (1700m) + Col de Porte - Centre d'Etude de la Neige (1325m)
 </p>
 
-<p><a name='Bau' href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_bauges[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_bauges[0] ?>" width='533'></a><br>
-<b>Bauges</b>, plan de la Limace (1630m). [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_bauges[1] ?>">6 mois</a> ]
+<p><a name='Bau' href="<?php echo $ZONE_ALLAN ?>"><img border='1' src="<?php echo $ZONE_ALLAN ?>" width='533'></a><br>
+<b>Bauges</b>, plan de la Limace (1630m)
 </p>
 
-<p><a name='Aig' href='http://www.meteo.fr/temps/france/nivose/pics/AIGRGS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/AIGRGS.gif' width='533'></a><br>
-<b>Aiguilles Rouges</b>, En face du Mont Blanc. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/AIGRG.gif">6 mois</a> ]
+<p><a name='Aig' href='<?php echo $ZONE_AIGRG ?>'><img border='1' src='<?php echo $ZONE_AIGRG ?>' width='533'></a><br>
+<b>Aiguilles Rouges</b>, En face du Mont Blanc
 </p>
-<p><a name='Bea' href='http://www.meteo.fr/temps/france/nivose/pics/SAISIS.gif' title='#IM7'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/SAISIS.gif' width='533'></a><br>
-<b>Beaufortain</b>, les Saisies ? [ <a href="http://www.meteo.fr/temps/france/nivose/pics/SAISI.gif">6 mois</a> ]
+<p><a name='Bea' href='<?php echo $ZONE_GRPAR ?>' title='#IM7'><img border='1' src='<?php echo $ZONE_GRPAR ?>' width='533'></a><br>
+<b>Beaufortain</b>, les Saisies ?
 </p>
-<p><a name='Van' href='http://www.meteo.fr/temps/france/nivose/pics/BELLES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/BELLES.gif' width='533'></a><br>
-<b>Vanoise</b>, La Plagne [ <a href="http://www.meteo.fr/temps/france/nivose/pics/BELLE.gif">6 mois</a> ]
+<p><a name='Van' href='<?php echo $ZONE_BELLE ?>'><img border='1' src='<?php echo $ZONE_BELLE ?>' width='533'></a><br>
+<b>Vanoise</b>, La Plagne
 </p>
-<p><a name='Mau' href='http://www.meteo.fr/temps/france/nivose/pics/BONNES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/BONNES.gif' width='533'></a><br>
-<b>Haute-Maurienne</b>, Bonneval-sur-Arc. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/BONNE.gif">6 mois</a> ]
+<p><a name='Mau' href='<?php echo $ZONE_BONNE ?>'><img border='1' src='<?php echo $ZONE_BONNE ?>' width='533'></a><br>
+<b>Haute-Maurienne</b>, Bonneval-sur-Arc.
 </p>
-<p><a name='Tar' href='http://www.meteo.fr/temps/france/nivose/pics/CHEVRS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/CHEVRS.gif' width='533'></a><br>
-<b>Haute Tarentaise</b>, lac du Chevril ? [ <a href="http://www.meteo.fr/temps/france/nivose/pics/CHEVR.gif">6 mois</a> ]
+<p><a name='Tar' href='<?php echo $ZONE_CHEVR ?>'><img border='1' src='<?php echo $ZONE_CHEVR ?>' width='533'></a><br>
+<b>Haute Tarentaise</b>, lac du Chevril ?
 </p>
-<p><a name='Tha' href='http://www.meteo.fr/temps/france/nivose/pics/ROCHIS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/ROCHIS.gif' width='533'></a><br>
-<b>Thabor</b>, les Rochilles ? [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ROCHI.gif">6 mois</a> ]
-</p>
-
-<p><a name='Ech' href='http://www.meteo.fr/temps/france/nivose/pics/ORCIES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/ORCIES.gif' width='533'></a><br>
-<b>Champsaur</b>, Orcières. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/ORCIE.gif">6 mois</a> ]
-</p>
-<p><a name='Que' href='http://www.meteo.fr/temps/france/nivose/pics/AGNELS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/AGNELS.gif' width='533'></a><br>
-<b>Queyras</b>, col Agnel. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/AGNEL.gif">6 mois</a> ]
-</p>
-<p><a name='Par' href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_parp[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_parp[0] ?>" width='533'></a><br>
-<b>Parpaillon</b> - Embrunais. [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_parp[1] ?>">6 mois</a> ]
-</p>
-<p><a name='Uba' href='http://www.meteo.fr/temps/france/nivose/pics/RESTES.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/RESTES.gif' width='533'></a><br>
-<b>Ubaye</b>, Restefond. [ <a href="http://www.meteo.fr/temps/france/nivose/pics/RESTE.gif">6 mois</a> ]
-</p>
-<p><a name='Mer' href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_merc[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_merc[0] ?>" width='533'></a><br>
-<b>Mercantour</b>, Lac des Millefonts. [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_merc[1] ?>">6 mois</a> ]
+<p><a name='Tha' href='<?php echo $ZONE_ROCHI ?>'><img border='1' src='<?php echo $ZONE_ROCHI ?>' width='533'></a><br>
+<b>Thabor</b>, les Rochilles ? 
 </p>
 
-<p><a name='PyE' href='http://www.meteo.fr/temps/france/nivose/pics/CANIGS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/CANIGS.gif' width='533'></a>
-<a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[0] ?>"><img border='1' src="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[0] ?>" width='533'></a>
+<p><a name='Ech' href='<?php echo $ZONE_ORCIE ?>'><img border='1' src='<?php echo $ZONE_ORCIE ?>' width='533'></a><br>
+<b>Champsaur</b>, Orcières.
+</p>
+<p><a name='Que' href='<?php echo $ZONE_AGNEL ?>'><img border='1' src='<?php echo $ZONE_AGNEL ?>' width='533'></a><br>
+<b>Queyras</b>, col Agnel. 
+</p>
+<p><a name='Par' href="<?php echo $ZONE_PARPA ?>"><img border='1' src="<?php echo $ZONE_PARPA ?>" width='533'></a><br>
+<b>Parpaillon</b> - Embrunais.
+</p>
+<p><a name='Uba' href='<?php echo $ZONE_RESTE ?>'><img border='1' src='<?php echo $ZONE_RESTE ?>' width='533'></a><br>
+<b>Ubaye</b>, Restefond.
+</p>
+<p><a name='Mer' href="<?php echo $ZONE_MILLE ?>"><img border='1' src="<?php echo $ZONE_MILLE ?>" width='533'></a><br>
+<b>Mercantour</b>, Lac des Millefonts
+</p>
+
+<p><a name='PyE' href='<?php echo $ZONE_CANIG ?>'><img border='1' src='<?php echo $ZONE_CANIG ?>' width='533'></a>
+<a href="<?php echo $ZONE_PUIGN ?>"><img border='1' src="<?php echo $ZONE_PUIGN ?>" width='533'></a>
 <br>
-<b>Pyrénées Orientales</b>, Canigou [ <a href="http://www.meteo.fr/temps/france/nivose/pics/CANIG.gif">6 mois</a> ] + Puigmal [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_puig[1] ?>">6 mois</a> ].
+<b>Pyrénées Orientales</b>, Canigou + Puigmal 
 </p>
 
 <p>
-<a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[0] ?>"><img border='1' src='http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[0] ?>' width='533'></a>
-<a href='http://www.meteo.fr/temps/france/nivose/pics/PAULAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/PAULAS.gif' width='533'></a>
+<a href="<?php echo $ZONE_HOSPI ?>"><img border='1' src='<?php echo $ZONE_HOSPI ?>' width='533'></a>
+<a href='<?php echo $ZONE_PAULA ?>'><img border='1' src='<?php echo $ZONE_PAULA ?>' width='533'></a>
 <br>
-<b>Pyrénées Orientales</b>, Hospitalet [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_hosp[1] ?>">6 mois</a> ] + Couserans (Port d'Aula) [ <a href="http://www.meteo.fr/temps/france/nivose/pics/PAULA.gif">6 mois</a> ].
+<b>Pyrénées Orientales</b>, Hospitalet + Couserans (Port d'Aula)
 </p>
 
 
-<p><a name='PyC' href='http://www.meteo.fr/temps/france/nivose/pics/MAUPAS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MAUPAS.gif' width='533'></a><br>
-<b>Pyrénées Centrales</b>, Luchonnais (Maupas)[ <a href="http://www.meteo.fr/temps/france/nivose/pics/MAUPA.gif">6 mois</a> ].
+<p><a name='PyC' href='<?php echo $ZONE_MAUPA ?>'><img border='1' src='<?php echo $ZONE_MAUPA ?>' width='533'></a><br>
+<b>Pyrénées Centrales</b>, Luchonnais (Maupas)
 </p>
 
 <p>
-<a name='Big' href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[0] ?>"><img border='1' src='http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[0] ?>' width='533'></a>
-<a href='http://www.meteo.fr/temps/france/nivose/pics/LARDIS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/LARDIS.gif' width='533'></a>
+<a name='Big' href="<?php echo $ZONE_AIGTE ?>"><img border='1' src='<?php echo $ZONE_AIGTE ?>' width='533'></a>
+<a href='<?php echo $ZONE_LARDI ?>'><img border='1' src='<?php echo $ZONE_LARDI ?>' width='533'></a>
 <br>
-<b>Haute Bigorre (Pyrénées)</b>, Tunnel de Bielsa (Aiguillettes) [ <a href="http://france.meteofrance.com/generated/integration/img/produits/mont/<?php echo $img_aig[1] ?>">6 mois</a> ] + Lac d'Ardiden [ <a href="http://www.meteo.fr/temps/france/nivose/pics/LARDI.gif">6 mois</a> ].
+<b>Haute Bigorre (Pyrénées)</b>, Tunnel de Bielsa (Aiguillettes) + Lac d'Ardiden
 </p>
 
-<p><a name='PyW' href='http://www.meteo.fr/temps/france/nivose/pics/SOUMCS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/SOUMCS.gif' width='533'></a><br>
-<b>Pyrénées Occidentales</b>, Aspe-Ossau (Soum Couy). [ <a href="http://www.meteo.fr/temps/france/nivose/pics/SOUMC.gif">6 mois</a> ]
+<p><a name='PyW' href='<?php echo $ZONE_SOUMC ?>'><img border='1' src='<?php echo $ZONE_SOUMC ?>' width='533'></a><br>
+<b>Pyrénées Occidentales</b>, Aspe-Ossau (Soum Couy).
 </p>
 
-<p><a name='Cor' href='http://www.meteo.fr/temps/france/nivose/pics/SPONDS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/SPONDS.gif' width='533'></a><a href='http://www.meteo.fr/temps/france/nivose/pics/MANICS.gif'><img border='1' src='http://www.meteo.fr/temps/france/nivose/pics/MANICS.gif' width='533'></a><br>
-<b>Corse (Cinto-Rotondo)</b>, Sponde [ <a href="http://www.meteo.fr/temps/france/nivose/pics/SPOND.gif">6 mois</a> ] + Maniccia [ <a href="http://www.meteo.fr/temps/france/nivose/pics/MANIC.gif">6 mois</a> ] 
+<p><a name='Cor' href='<?php echo $ZONE_SPOND ?>'><img border='1' src='<?php echo $ZONE_SPOND ?>' width='533'></a><a href='<?php echo $ZONE_MANIC ?>'><img border='1' src='<?php echo $ZONE_MANIC ?>' width='533'></a><br>
+<b>Corse (Cinto-Rotondo)</b>, Sponde + Maniccia
 </p>
 
 </center>

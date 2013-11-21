@@ -21,7 +21,9 @@ ua='metaskirando bot'
 odir="/var/www/metaskirando.camptocamp.org/private/data"
 t=180
 
-mfadr="http://france.meteofrance.com/js/dwr/call/plaincall/montagneComponent.rechercheStationImagesNivoses.dwr?callCount=1&scriptSessionId=montagneComponent&c0-scriptName=montagneComponent&c0-methodName=rechercheStationImagesNivoses&c0-id=0&batchId=0&c0-param0=string%3A"
+mfadrs="http://www.meteofrance.com/mf3-rpc-portlet/rest/relevemontagne/releve/"
+mfadre="/type/imgnivosesai"
+nivadrs="http:\/\/www.meteofrance.com\/integration\/sim-portail"
 
 download () {
   TMP=$(mktemp)
@@ -49,15 +51,9 @@ download gulliver.sr  "http://www.gulliver.it/sci-ripido/" &
 download gulliver.sa  "http://www.gulliver.it/scialpinismo/" &
 download bivouak      "http://www.bivouak.net/accueil/index.php?id_sport=1" &
 
-($curl "${mfadr}ALPES-NORD"   && \
- $curl "${mfadr}ALPES-SUD"    && \
- $curl "${mfadr}PYRENEES-EST" && \
- $curl "${mfadr}PYRENEES-OUEST") > $odir/mf.web
-
-if [ $? == 0 ]; then
-  echo "extracting links from MF pages."
-  egrep 'Porte|Bauges|Mercantour|Parpaillon|Puigmal|Hospitalet|Aiguillettes' $odir/mf.web > $odir/nivo_links.web
-else
-  echo "failed fetching at least one MF page."
-fi
-
+nivose_file="$odir/nivo_links.web"
+rm -f $nivose_file
+for i in BONNE PORTE ECRIN AIGRG BELLE GRPAR ROCHI MEIJE AIGLE CHEVR ALLAN STHIL LEGUA PARPA MILLE RESTE AGNEL ORCIE MANIC SPOND CANIG PAULA MAUPA PUIGN HOSPI LARDI MAUPA SOUMC AIGTE; do
+  $curl "${mfadrs}ZONE_${i}${mfadre}" | sed "s/^\"/ZONE_${i}:\"${nivadrs}/" >> $nivose_file
+  echo "" >> $nivose_file
+done
