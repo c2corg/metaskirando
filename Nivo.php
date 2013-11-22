@@ -99,89 +99,89 @@ Les stations automatiques de Météo France sont disséminées dans les montagne
 ?>
 
 <center>
-<p><a name='Bel' href='<?php echo $ZONE_AIGLE ?>'><img border='1' src='<?php echo $ZONE_AIGLE ?>' width='533'></a>
+<p><a name='Bel' href='<?php echo $ZONE_AIGLE ?>'><img border='1' src='<?php echo $ZONE_AIGLE ?>'></a>
 <br><b>Belledonne</b>, sur le Plat du Pin, au-dessus du Rivier d'Allemont, en montant vers le Pic de la Belle Etoile [ <a href="<?php echo $ZONE_AIGLE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Ecr' href='<?php echo $ZONE_ECRIN ?>'><img border='1' src='<?php echo $ZONE_ECRIN ?>' width='533'></a><a href='<?php echo $ZONE_MEIJE ?>'><img border='1' src='<?php echo $ZONE_MEIJE ?>' width='533'></a>
+<p><a name='Ecr' href='<?php echo $ZONE_ECRIN ?>'><img border='1' src='<?php echo $ZONE_ECRIN ?>'></a><a href='<?php echo $ZONE_MEIJE ?>'><img border='1' src='<?php echo $ZONE_MEIJE ?>'></a>
 <br><b>Ecrins</b>, sur la morraine du glacier de Bonnepierre, non-loin du dôme des Ecrins  [ <a href="<?php echo $ZONE_ECRIN_SAI ?>">saison</a> ] + dans les vallons de la Meije, au-dessus de la Grave (?)  [ <a href="<?php echo $ZONE_MEIJE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Ver' href='<?php echo $ZONE_LEGUA ?>'><img border='1' src='<?php echo $ZONE_LEGUA ?>' width='533'></a><br>
+<p><a name='Ver' href='<?php echo $ZONE_LEGUA ?>'><img border='1' src='<?php echo $ZONE_LEGUA ?>'></a><br>
 <b>Vercors</b>, commune de Le Gua (à côté du couloir des Sultanes)  [ <a href="<?php echo $ZONE_LEGUA_SAI ?>">saison</a> ]
 </p>
-<p><a name='Cha' href='<?php echo $ZONE_STHIL ?>'><img border='1' src='<?php echo $ZONE_STHIL ?>' width='533'></a><a href="<?php echo $ZONE_PORTE ?>"><img border='1' src="<?php echo $ZONE_PORTE ?>" width='533'></a>
+<p><a name='Cha' href='<?php echo $ZONE_STHIL ?>'><img border='1' src='<?php echo $ZONE_STHIL ?>'></a><a href="<?php echo $ZONE_PORTE ?>"><img border='1' src="<?php echo $ZONE_PORTE ?>"></a>
 <br>
 <b>Chartreuse</b>, commune de St-Hilaire du Touvet (1700m) + Col de Porte [ <a href="<?php echo $ZONE_PORTE_SAI ?>">saison</a> ] - Centre d'Etude de la Neige (1325m)  [ <a href="<?php echo $ZONE_PORTE_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='Bau' href="<?php echo $ZONE_ALLAN ?>"><img border='1' src="<?php echo $ZONE_ALLAN ?>" width='533'></a><br>
+<p><a name='Bau' href="<?php echo $ZONE_ALLAN ?>"><img border='1' src="<?php echo $ZONE_ALLAN ?>"></a><br>
 <b>Bauges</b>, plan de la Limace (1630m)  [ <a href="<?php echo $ZONE_ALLAN_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='Aig' href='<?php echo $ZONE_AIGRG ?>'><img border='1' src='<?php echo $ZONE_AIGRG ?>' width='533'></a><br>
+<p><a name='Aig' href='<?php echo $ZONE_AIGRG ?>'><img border='1' src='<?php echo $ZONE_AIGRG ?>'></a><br>
 <b>Aiguilles Rouges</b>, En face du Mont Blanc  [ <a href="<?php echo $ZONE_AIGRG_SAI ?>">saison</a> ]
 </p>
-<p><a name='Bea' href='<?php echo $ZONE_GRPAR ?>' title='#IM7'><img border='1' src='<?php echo $ZONE_GRPAR ?>' width='533'></a><br>
+<p><a name='Bea' href='<?php echo $ZONE_GRPAR ?>' title='#IM7'><img border='1' src='<?php echo $ZONE_GRPAR ?>'></a><br>
 <b>Beaufortain</b>, les Saisies ? [ <a href="<?php echo $ZONE_GRPAR_SAI ?>">saison</a> ]
 </p>
-<p><a name='Van' href='<?php echo $ZONE_BELLE ?>'><img border='1' src='<?php echo $ZONE_BELLE ?>' width='533'></a><br>
+<p><a name='Van' href='<?php echo $ZONE_BELLE ?>'><img border='1' src='<?php echo $ZONE_BELLE ?>'></a><br>
 <b>Vanoise</b>, La Plagne [ <a href="<?php echo $ZONE_BELLE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Mau' href='<?php echo $ZONE_BONNE ?>'><img border='1' src='<?php echo $ZONE_BONNE ?>' width='533'></a><br>
+<p><a name='Mau' href='<?php echo $ZONE_BONNE ?>'><img border='1' src='<?php echo $ZONE_BONNE ?>'></a><br>
 <b>Haute-Maurienne</b>, Bonneval-sur-Arc. [ <a href="<?php echo $ZONE_BONNE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Tar' href='<?php echo $ZONE_CHEVR ?>'><img border='1' src='<?php echo $ZONE_CHEVR ?>' width='533'></a><br>
+<p><a name='Tar' href='<?php echo $ZONE_CHEVR ?>'><img border='1' src='<?php echo $ZONE_CHEVR ?>'></a><br>
 <b>Haute Tarentaise</b>, lac du Chevril ? [ <a href="<?php echo $ZONE_CHEVR_SAI ?>">saison</a> ]
 </p>
-<p><a name='Tha' href='<?php echo $ZONE_ROCHI ?>'><img border='1' src='<?php echo $ZONE_ROCHI ?>' width='533'></a><br>
+<p><a name='Tha' href='<?php echo $ZONE_ROCHI ?>'><img border='1' src='<?php echo $ZONE_ROCHI ?>'></a><br>
 <b>Thabor</b>, les Rochilles ?  [ <a href="<?php echo $ZONE_ROCHI_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='Ech' href='<?php echo $ZONE_ORCIE ?>'><img border='1' src='<?php echo $ZONE_ORCIE ?>' width='533'></a><br>
+<p><a name='Ech' href='<?php echo $ZONE_ORCIE ?>'><img border='1' src='<?php echo $ZONE_ORCIE ?>'></a><br>
 <b>Champsaur</b>, Orcières. [ <a href="<?php echo $ZONE_ORCIE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Que' href='<?php echo $ZONE_AGNEL ?>'><img border='1' src='<?php echo $ZONE_AGNEL ?>' width='533'></a><br>
+<p><a name='Que' href='<?php echo $ZONE_AGNEL ?>'><img border='1' src='<?php echo $ZONE_AGNEL ?>'></a><br>
 <b>Queyras</b>, col Agnel.  [ <a href="<?php echo $ZONE_AGNEL_SAI ?>">saison</a> ]
 </p>
-<p><a name='Par' href="<?php echo $ZONE_PARPA ?>"><img border='1' src="<?php echo $ZONE_PARPA ?>" width='533'></a><br>
+<p><a name='Par' href="<?php echo $ZONE_PARPA ?>"><img border='1' src="<?php echo $ZONE_PARPA ?>"></a><br>
 <b>Parpaillon</b> - Embrunais. [ <a href="<?php echo $ZONE_PARPA_SAI ?>">saison</a> ]
 </p>
-<p><a name='Uba' href='<?php echo $ZONE_RESTE ?>'><img border='1' src='<?php echo $ZONE_RESTE ?>' width='533'></a><br>
+<p><a name='Uba' href='<?php echo $ZONE_RESTE ?>'><img border='1' src='<?php echo $ZONE_RESTE ?>'></a><br>
 <b>Ubaye</b>, Restefond. [ <a href="<?php echo $ZONE_RESTE_SAI ?>">saison</a> ]
 </p>
-<p><a name='Mer' href="<?php echo $ZONE_MILLE ?>"><img border='1' src="<?php echo $ZONE_MILLE ?>" width='533'></a><br>
+<p><a name='Mer' href="<?php echo $ZONE_MILLE ?>"><img border='1' src="<?php echo $ZONE_MILLE ?>"></a><br>
 <b>Mercantour</b>, Lac des Millefonts [ <a href="<?php echo $ZONE_MILLE_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='PyE' href='<?php echo $ZONE_CANIG ?>'><img border='1' src='<?php echo $ZONE_CANIG ?>' width='533'></a>
-<a href="<?php echo $ZONE_PUIGN ?>"><img border='1' src="<?php echo $ZONE_PUIGN ?>" width='533'></a>
+<p><a name='PyE' href='<?php echo $ZONE_CANIG ?>'><img border='1' src='<?php echo $ZONE_CANIG ?>'></a>
+<a href="<?php echo $ZONE_PUIGN ?>"><img border='1' src="<?php echo $ZONE_PUIGN ?>"></a>
 <br>
 <b>Pyrénées Orientales</b>, Canigou [ <a href="<?php echo $ZONE_CANIG_SAI ?>">saison</a> ] + Puigmal  [ <a href="<?php echo $ZONE_PUIGN_SAI ?>">saison</a> ]
 </p>
 
 <p>
-<a href="<?php echo $ZONE_HOSPI ?>"><img border='1' src='<?php echo $ZONE_HOSPI ?>' width='533'></a>
-<a href='<?php echo $ZONE_PAULA ?>'><img border='1' src='<?php echo $ZONE_PAULA ?>' width='533'></a>
+<a href="<?php echo $ZONE_HOSPI ?>"><img border='1' src='<?php echo $ZONE_HOSPI ?>'></a>
+<a href='<?php echo $ZONE_PAULA ?>'><img border='1' src='<?php echo $ZONE_PAULA ?>'></a>
 <br>
 <b>Pyrénées Orientales</b>, Hospitalet [ <a href="<?php echo $ZONE_HOSPI_SAI ?>">saison</a> ] + Couserans (Port d'Aula) [ <a href="<?php echo $ZONE_PAULA_SAI ?>">saison</a> ]
 </p>
 
 
-<p><a name='PyC' href='<?php echo $ZONE_MAUPA ?>'><img border='1' src='<?php echo $ZONE_MAUPA ?>' width='533'></a><br>
+<p><a name='PyC' href='<?php echo $ZONE_MAUPA ?>'><img border='1' src='<?php echo $ZONE_MAUPA ?>'></a><br>
 <b>Pyrénées Centrales</b>, Luchonnais (Maupas) [ <a href="<?php echo $ZONE_MAUPA_SAI ?>">saison</a> ]
 </p>
 
 <p>
-<a name='Big' href="<?php echo $ZONE_AIGTE ?>"><img border='1' src='<?php echo $ZONE_AIGTE ?>' width='533'></a>
-<a href='<?php echo $ZONE_LARDI ?>'><img border='1' src='<?php echo $ZONE_LARDI ?>' width='533'></a>
+<a name='Big' href="<?php echo $ZONE_AIGTE ?>"><img border='1' src='<?php echo $ZONE_AIGTE ?>'></a>
+<a href='<?php echo $ZONE_LARDI ?>'><img border='1' src='<?php echo $ZONE_LARDI ?>'></a>
 <br>
 <b>Haute Bigorre (Pyrénées)</b>, Tunnel de Bielsa (Aiguillettes)  [ <a href="<?php echo $ZONE_AIGTE_SAI ?>">saison</a> ] + Lac d'Ardiden [ <a href="<?php echo $ZONE_LARDI_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='PyW' href='<?php echo $ZONE_SOUMC ?>'><img border='1' src='<?php echo $ZONE_SOUMC ?>' width='533'></a><br>
+<p><a name='PyW' href='<?php echo $ZONE_SOUMC ?>'><img border='1' src='<?php echo $ZONE_SOUMC ?>'></a><br>
 <b>Pyrénées Occidentales</b>, Aspe-Ossau (Soum Couy). [ <a href="<?php echo $ZONE_SOUMC_SAI ?>">saison</a> ]
 </p>
 
-<p><a name='Cor' href='<?php echo $ZONE_SPOND ?>'><img border='1' src='<?php echo $ZONE_SPOND ?>' width='533'></a><a href='<?php echo $ZONE_MANIC ?>'><img border='1' src='<?php echo $ZONE_MANIC ?>' width='533'></a><br>
+<p><a name='Cor' href='<?php echo $ZONE_SPOND ?>'><img border='1' src='<?php echo $ZONE_SPOND ?>'></a><a href='<?php echo $ZONE_MANIC ?>'><img border='1' src='<?php echo $ZONE_MANIC ?>'></a><br>
 <b>Corse (Cinto-Rotondo)</b>, Sponde [ <a href="<?php echo $ZONE_SPOND_SAI ?>">saison</a> ] + Maniccia [ <a href="<?php echo $ZONE_MANIC_SAI ?>">saison</a> ]
 </p>
 
