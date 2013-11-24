@@ -36,7 +36,9 @@
 </div>
 </div>
 <script type="text/javascript">
-var _gaq = [['_setAccount', 'UA-2814179-4'],['_setDomainName', 'none'],['_trackPageview'],['_trackPageLoadTime']];
-_gaq.push(function() {pageTracker = _gat._getTracker('UA-2814179-4')});(function(d, t) { var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-g.async = 1; g.src = '//www.google-analytics.com/ga.js'; s.parentNode.insertBefore(g, s); }(document, 'script'));
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create','UA-2814179-4');ga('send','pageview');
 </script>
