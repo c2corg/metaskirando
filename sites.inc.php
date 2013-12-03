@@ -751,8 +751,8 @@ function parse_Gulliver(&$textall)
 			$reg = 'Italie ' . end($regs[0]);
 		} else $reg='Italie';
 // interprete la date :
-		ereg ("([0-9]{1,2})/([0-9]{1,2})/([0-9]{4})", $date, $regs);
-		$date = sprintf("%04d-%02d-%02d", $regs[3], $regs[2], $regs[1]);
+		ereg ("([0-9]{1,2})/([0-9]{1,2})/([0-9]{2})", $date, $regs);
+		$date = sprintf("20%02d-%02d-%02d", $regs[3], $regs[2], $regs[1]);
 		$textall .= "gulliver $id\n$date $cot\n$nom\nhttp://www.gulliver.it/itinerario/$id/\n$reg\n\n";
 	}
 }
