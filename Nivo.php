@@ -49,7 +49,7 @@ N'hésitez pas à sortir avec des organismes spécialisés (comme le CAF), qui v
 			if ($dep[0] != 'A') {
 				$dep_code = "DEPT$dep";
 			} else $dep_code = "ANDORRE";
-			echo "<a href=\"http://france.meteofrance.com/france/MONTAGNE?MONTAGNE_PORTLET.path=montagnebulletinneige%2F$dep_code#bulletinNeigeMontagne\">$dep</a> ";
+			echo "<a href=\"http://www.meteofrance.com/previsions-meteo-montagne/bulletin-avalanches/d/AV$dep_code\">$dep</a> ";
 		}
 	}
 ?>
