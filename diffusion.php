@@ -21,6 +21,7 @@
 <meta name="description" content="Le moteur de recherche du Ski de Rando. Les conditions de neige pour le ski de randonnée en France et ailleurs !" />
 <meta name="keywords" content="ski de rando, ski alpinisme, ski extrême, pente raide, alpes, pyrénées, neige, météo, skitour, skirando, blms, nimp crew, volopress, ohm chamonix, sngm, bivouak" />
 <link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="http://metaskirando.camptocamp.org/diffusion.php" />
 <?php
 
 extract($_GET);

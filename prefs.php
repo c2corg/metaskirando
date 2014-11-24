@@ -78,6 +78,7 @@
 <title>Meta-Skirando : Mes préférences</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="style.css" rel="stylesheet" type="text/css">
+<link rel="canonical" href="http://metaskirando.camptocamp.org/prefs.php" />
 </head>
 <body>
 

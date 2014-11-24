@@ -71,6 +71,7 @@
 <link rel="alternate" type="application/rss+xml" title="Les dernieres sorties de ski de rando" href="ski_rss.php" />
 <link rel="search" type="application/opensearchdescription+xml" title="rechercher avec metaskirando" href="metaskirando.xml">
 <link rel="shortcut icon" href="favicon.ico" />
+<link rel="canonical" href="http://metaskirando.camptocamp.org" />
 </head>
 <body>
 

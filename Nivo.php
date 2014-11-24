@@ -25,6 +25,7 @@ require_once('./settings.inc.php');
 <link href="style.css" rel="stylesheet" type="text/css">
 <meta name="description" content="Le moteur de recherche du Ski de Rando. Les nivoses de météo france et les bulletins d'avalanche. Prévisions météo montagne dans les Alpes" />
 <meta name="keywords" content="ski de rando, ski alpinisme, ski extrême, pente raide, alpes, pyrénées, neige, météo" />
+<link rel="canonical" href="http://metaskirando.camptocamp.org/Nivo.php" />
 </head>
 <body>
 
