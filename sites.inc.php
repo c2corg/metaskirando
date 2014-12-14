@@ -743,8 +743,8 @@ function parse_Gulliver(&$textall)
 		$items = explode('</td>',$entries[$i]);
     $nom = explode('</a>', $items[1]);
     $nom = trim(strip_tags($nom[0]));
-		$cot = trim(strip_tags($items[3]));
-		$date = trim(strip_tags($items[4]));
+		$cot = trim(strip_tags($items[2]));
+		$date = trim(strip_tags($items[3]));
 // recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
 		eregi('/itinerario/([0-9]+)/',$items[1],$regs);	$id = $regs[1];
 // recupere la region :
