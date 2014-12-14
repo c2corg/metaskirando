@@ -81,6 +81,8 @@ $r = count($reg);
 $r2 = 0;
 $n = count($sorties);
 
+$reg2 = array();
+
 // un premier scan pour obtenir les régions.
 	for ($i=0;$i<$n;$i++)
 	{
@@ -100,7 +102,7 @@ $n = count($sorties);
 		{
 			for($j=0; $j<$r2; $j++)
 			{
-				if ($reg2[$j]['key'] == $reg_name)
+				if (isset($reg2[$j]) && $reg2[$j]['key'] == $reg_name)
 				{
 					$reg2[$j]['nbr'] ++;
 					$found = TRUE;
@@ -739,15 +741,15 @@ function parse_Gulliver(&$textall)
 	for ($i = 1;$i<$n; $i++)
 	{
 		$items = explode('</td>',$entries[$i]);
-                $nom = explode('</a>', $items[0]);
-                $nom = trim(strip_tags($nom[0]));
-		$cot = trim(strip_tags($items[1]));
-		$date = trim(strip_tags($items[2]));
+    $nom = explode('</a>', $items[1]);
+    $nom = trim(strip_tags($nom[0]));
+		$cot = trim(strip_tags($items[3]));
+		$date = trim(strip_tags($items[4]));
 // recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
-		eregi('/itinerario/([0-9]+)/',$items[0],$regs);	$id = $regs[1];
+		eregi('/itinerario/([0-9]+)/',$items[1],$regs);	$id = $regs[1];
 // recupere la region :
 		unset($regs);
-		if ( preg_match_all('/\([^\)]+\)/',$items[0],$regs) > 0) {
+		if (preg_match_all('/\([^\)]+\)/',$items[1],$regs) > 0) {
 			$reg = 'Italie ' . end($regs[0]);
 		} else $reg='Italie';
 // interprete la date :
