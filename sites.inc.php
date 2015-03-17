@@ -998,7 +998,7 @@ function parse_Bivouak(&$textall,$last_id)
 				$nom = trim(strip_tags($items[1]));
 				$reg = trim(strip_tags($items[2]));
 				$cot = trim(strip_tags($items[3]));
-				$part = trim(strip_tags($items[5]));
+				$part = trim(strip_tags($items[4]));
 // interprete la date :
 				ereg ("([0-9]{2}).([0-9]{2})", $date, $regs);
 				if (($regs[2]) > $cur_month) {
