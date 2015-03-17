@@ -980,7 +980,7 @@ function parse_Bivouak(&$textall,$last_id)
 	$textall = '';
 
 // extrait l'ID de la sortie.
-	ereg('id_sortie-([0-9]+)',$entries[3],$regs);	$new_id = $regs[1];
+	ereg('-([0-9]+)-sport-1',$entries[3],$regs);	$new_id = $regs[1];
 	if ($new_id > $last_id)
 	{
 		$n = count($entries)-1;
@@ -991,7 +991,7 @@ function parse_Bivouak(&$textall,$last_id)
 			$stop = strpos($items[1],'" >',$start);
 			$lien = substr($items[1],$start,$stop - $start);
 // extrait l'ID de la sortie.
-			ereg('id_sortie-([0-9]+)',$lien,$regs);		$id = $regs[1];
+			ereg('-([0-9]+)-sport-1',$lien,$regs);		$id = $regs[1];
 			if ($id > $last_id)
 			{
 				$date = trim(strip_tags($items[0]));
