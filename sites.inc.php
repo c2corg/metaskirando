@@ -738,22 +738,26 @@ function parse_Gulliver(&$textall)
 	$n = count($entries)-1;
 	$textall = '';
 
-	for ($i = 1;$i<$n; $i++)
+	for ($i = 2;$i<$n; $i++)
 	{
 		$items = explode('</td>',$entries[$i]);
-    $nom = explode('</a>', $items[1]);
-    $nom = trim(strip_tags($nom[0]));
-		$cot = trim(strip_tags($items[2]));
-		$date = trim(strip_tags($items[3]));
-// recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
-		eregi('/itinerario/([0-9]+)/',$items[1],$regs);	$id = $regs[1];
-// recupere la region :
+    		$nom = explode('</a>', $items[2]);
+    		$nom = trim(strip_tags($nom[0]));
+		$cot = trim(strip_tags($items[4]));
+		$date = trim(strip_tags($items[5]));
+		// recupere l'ID de l'itinéraire (la sortie n'est pas directement disponible...)
+		preg_match('/\/itinerario\/([0-9]+)\//i', $items[2], $regs);	$id = $regs[1];
+		// recupere la region :
 		unset($regs);
-		if (preg_match_all('/\([^\)]+\)/',$items[1],$regs) > 0) {
-			$reg = 'Italie ' . end($regs[0]);
-		} else $reg='Italie';
-// interprete la date :
-		ereg ("([0-9]{1,2})/([0-9]{1,2})/([0-9]{2})", $date, $regs);
+		if (preg_match_all('/\([^\)]+\)/',$items[2], $regs) > 0) {
+			$reg2 = end($regs[0]);
+			$nom = substr($nom, 0, - strlen($reg2) - 1);
+			$reg = 'Italie ' . $reg2;
+		} else {
+			$reg='Italie';
+		}
+		// interprete la date :
+		preg_match("/([0-9]{1,2})\/([0-9]{1,2})\/([0-9]{2})/", $date, $regs);
 		$date = sprintf("20%02d-%02d-%02d", $regs[3], $regs[2], $regs[1]);
 		$textall .= "gulliver $id\n$date $cot\n$nom\nhttp://www.gulliver.it/itinerario/$id/\n$reg\n\n";
 	}
