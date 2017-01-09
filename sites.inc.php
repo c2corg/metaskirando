@@ -803,36 +803,27 @@ function parse_SNGM(&$textall)
 function parse_Skirando(&$textall,$last_id)
 {
 	global $dlim;
-// on garde que la partie interessante.
-	$entries = explode('</tr>',substr($textall,strpos($textall,'<tbody>')));
-	$textall = '';
-	$new_id = $last_id;
 
-	$n = count($entries)-1;
-	for ($i = 0;$i<$n; $i++)
-	{
-		$items = explode('</td>',$entries[$i]);
-		$lien = substr($items[1],strpos($items[1],'<a href="..')+9);
-		$lien = substr($lien,0,strpos($lien,'">'));
-		ereg('/outings/([0-9]+)',$lien,$regs);	$id = $regs[1];
-		if ($id > $last_id)
-		{
-			$nom = trim(strip_tags($items[1]));
-			$date = trim(strip_tags($items[2]));
-			$cot = trim(strip_tags($items[6]));
-			$reg = trim(strip_tags($items[9]));
-			$part = trim(strip_tags($items[12]));
-// interprete la date :
-			$jma = explode(' ',$date);
-			if (strlen($jma[0]) == 1) $jma[0] = "0{$jma[0]}";
-			$date = "{$jma[2]}-" . get_mois($jma[1]) . "-{$jma[0]}";
-// pour etre ecrit plus tard :
-			if ($date < $dlim) break;	// pas plus vieux que 1 mois.
-			$textall .= "c2c $id\n$date $cot\n$nom\nhttp://www.camptocamp.org/outings/$id\n$reg\n$part\n";
-				if ($id > $new_id) $new_id = $id;
-		}
-	}
-	return $new_id;
+  $obj = json_decode($textall, true);
+  $outings = $obj['documents'];
+  $textall = '';
+
+  $new_id = $last_id;
+
+  foreach ($outings as $outing) {
+    $id = $outing['document_id'];
+    $date = $outing['date_start'];
+    $name = $outing['locales'][0]['title'];
+    $link = 'https://www.camptocamp.org/outings/' . $id;
+    $area = get_area($outing);
+    $cotation = ""; // TODO get_cotation($outing);
+    $author = $outing['author']['name'];
+    if ($date < $dlim) break; // not older than one month
+    $textall .= "c2c $id\n$date $cotation\n$name\n$link\n$area\n$author\n";
+    if ($id > $new_id) $new_id = $id;
+  }
+
+  return $new_id;
 }
 
 // cherche la cot d'une volo-course si dispo (et ajoute les participants !)

@@ -54,7 +54,7 @@ download () {
 
 download skitour      "http://www.skitour.fr/topos/dernieres-sorties.php?nbr=100" &
 download volo         "http://www.volopress.net/volo/spip.php?rubrique2" &
-download c2c          "http://localhost/outings/list/act/1/layout/light/npp/60" www.camptocamp.org &
+download c2c          "https://api.camptocamp.org/outings?act=skitouring&pl=fr" &
 download SNGM         "http://www.montagneinfo.net/flux/activites.php?NoIDActivite=11" &
 download gulliver.sr  "http://www.gulliver.it/sci-ripido/" &
 download gulliver.sa  "http://www.gulliver.it/scialpinismo/" &
