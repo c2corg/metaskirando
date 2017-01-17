@@ -796,35 +796,45 @@ function parse_SNGM(&$textall)
 */
 
 //////////////////////////
-// $textall : contenu de "http://www.camptocamp.org/outings/list/orderby/date/order/desc/page/$page"
+// $textall : contenu de "https://api.camptocamp.org/outings?pl=fr&act=skitouring"
 // $last_id : ne garde que les sorties dont l'id > $last_id
 // renvoie dans $textall un buffer pret a etre ecrit dans le fichier cache.
 //    et en return value : $new_id (l'id le plus recent).
-function parse_Skirando(&$textall,$last_id)
+function parse_Skirando(&$textall, $last_id)
 {
-	global $dlim;
+    global $dlim;
 
-  $obj = json_decode($textall, true);
-  $outings = $obj['documents'];
-  $textall = '';
+    $obj = json_decode($textall, true);
+    $outings = $obj['documents'];
+    $textall = '';
+    $new_id = $last_id;
 
-  $new_id = $last_id;
+    foreach ($outings as $outing) {
+        $id = $outing['document_id'];
+        $date = $outing['date_start'];
+        $name = $outing['locales'][0]['title'];
+        $link = 'https://www.camptocamp.org/outings/' . $id;
+        $area = c2c_area($outing);
+        $cotation = ""; // TODO get_cotation($outing);
+        $author = $outing['author']['name'];
+        if ($date < $dlim) break; // not older than one month
+        $textall .= "c2c $id\n$date $cotation\n$name\n$link\n$area\n$author\n";
+        if ($id > $new_id) $new_id = $id;
+    }
 
-  foreach ($outings as $outing) {
-    $id = $outing['document_id'];
-    $date = $outing['date_start'];
-    $name = $outing['locales'][0]['title'];
-    $link = 'https://www.camptocamp.org/outings/' . $id;
-    $area = get_area($outing);
-    $cotation = ""; // TODO get_cotation($outing);
-    $author = $outing['author']['name'];
-    if ($date < $dlim) break; // not older than one month
-    $textall .= "c2c $id\n$date $cotation\n$name\n$link\n$area\n$author\n";
-    if ($id > $new_id) $new_id = $id;
-  }
-
-  return $new_id;
+    return $new_id;
 }
+
+function c2c_area($outing) {
+    foreach ($outing["areas"] as $area) {
+        $name = $area["locales"][0]["title"];
+        if ($area["area_type"] == "range") {
+            break;
+        }
+    }
+    return $name;
+}
+
 
 // cherche la cot d'une volo-course si dispo (et ajoute les participants !)
 function volo_cot($url,&$parts)
